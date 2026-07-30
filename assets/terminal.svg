@@ -1,230 +1,144 @@
-<svg width="900" height="520"
-xmlns="http://www.w3.org/2000/svg">
+<svg width="900" height="520" viewBox="0 0 900 520" xmlns="http://www.w3.org/2000/svg">
 
-<style>
+  <desc>Animated Linux/Ubuntu-style terminal simulation for a GitHub profile README. Pure SVG + SMIL, no scripting.</desc>
 
-text{
-    font-family:"Fira Code",monospace;
-    fill:#d4d4d4;
-    font-size:20px;
-}
+  <defs>
+    <!-- Soft drop shadow so the window reads as a floating card on any README background -->
+    <filter id="windowShadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="10" stdDeviation="14" flood-color="#000000" flood-opacity="0.45"/>
+    </filter>
+  </defs>
 
-.small{
-    font-family:"Fira Code",monospace;
-    fill:#9e9e9e;
-    font-size:15px;
-}
+  <!-- ================================================================= -->
+  <!-- WINDOW CHROME                                                     -->
+  <!-- ================================================================= -->
 
-.bg{
-    fill:#1e1e1e;
-}
+  <!-- Window body -->
+  <rect x="0" y="0" width="900" height="520" rx="10" ry="10"
+        fill="#1e1e1e" stroke="#000000" stroke-opacity="0.35" stroke-width="1"
+        filter="url(#windowShadow)"/>
 
-.title{
-    fill:#2d2d2d;
-}
+  <!-- Title bar (rounded only at the top, flush where it meets the body) -->
+  <path d="M10,0 L890,0 A10,10 0 0 1 900,10 L900,40 L0,40 L0,10 A10,10 0 0 1 10,0 Z"
+        fill="#2d2d2d"/>
 
-.red{fill:#ff5f56;}
-.yellow{fill:#ffbd2e;}
-.green{fill:#27c93f;}
+  <!-- Mac-style traffic light buttons -->
+  <circle cx="30" cy="20" r="6" fill="#FF5F56"/>
+  <circle cx="50" cy="20" r="6" fill="#FFBD2E"/>
+  <circle cx="70" cy="20" r="6" fill="#27C93F"/>
 
-.cursor{
-    fill:#27c93f;
-}
+  <!-- Window title -->
+  <text x="450" y="25" text-anchor="middle" font-family="'Fira Code', monospace"
+        font-size="14" fill="#B0B0B0">alireza@github:~</text>
 
-</style>
+  <!-- ================================================================= -->
+  <!-- COMMAND 1 : whoami                                                -->
+  <!-- Frames: prompt -> w -> wh -> who -> whoa -> whoam -> whoami        -->
+  <!-- ================================================================= -->
+  <text x="30" y="95" font-family="'Fira Code', monospace" font-size="20" xml:space="preserve"><tspan fill="#4CAF50" opacity="0">alireza@github:~$ <set attributeName="opacity" to="1" begin="0s" fill="freeze"/></tspan><tspan fill="#FFFFFF" opacity="0">w<set attributeName="opacity" to="1" begin="0.39s" fill="freeze"/></tspan><tspan fill="#FFFFFF" opacity="0">h<set attributeName="opacity" to="1" begin="0.5s" fill="freeze"/></tspan><tspan fill="#FFFFFF" opacity="0">o<set attributeName="opacity" to="1" begin="0.57s" fill="freeze"/></tspan><tspan fill="#FFFFFF" opacity="0">a<set attributeName="opacity" to="1" begin="0.67s" fill="freeze"/></tspan><tspan fill="#FFFFFF" opacity="0">m<set attributeName="opacity" to="1" begin="0.8s" fill="freeze"/></tspan><tspan fill="#FFFFFF" opacity="0">i<set attributeName="opacity" to="1" begin="0.865s" fill="freeze"/></tspan></text>
 
-<!-- Window -->
+  <!-- Output of whoami -->
+  <text x="30" y="123" font-family="'Fira Code', monospace" font-size="20" xml:space="preserve"
+        fill="#D4D4D4" opacity="0">Alireza Pirooz<set attributeName="opacity" to="1" begin="1.365s" fill="freeze"/></text>
 
-<rect
-x="20"
-y="20"
-width="860"
-height="480"
-rx="12"
-ry="12"
-class="bg"/>
+  <!-- ================================================================= -->
+  <!-- COMMAND 2 : pwd                                                   -->
+  <!-- Frames: prompt -> p -> pw -> pwd                                  -->
+  <!-- ================================================================= -->
+  <text x="30" y="151" font-family="'Fira Code', monospace" font-size="20" xml:space="preserve"><tspan fill="#4CAF50" opacity="0">alireza@github:~$ <set attributeName="opacity" to="1" begin="2.065s" fill="freeze"/></tspan><tspan fill="#FFFFFF" opacity="0">p<set attributeName="opacity" to="1" begin="2.465s" fill="freeze"/></tspan><tspan fill="#FFFFFF" opacity="0">w<set attributeName="opacity" to="1" begin="2.55s" fill="freeze"/></tspan><tspan fill="#FFFFFF" opacity="0">d<set attributeName="opacity" to="1" begin="2.67s" fill="freeze"/></tspan></text>
 
-<!-- Top Bar -->
+  <!-- Output of pwd -->
+  <text x="30" y="179" font-family="'Fira Code', monospace" font-size="20" xml:space="preserve"
+        fill="#D4D4D4" opacity="0">AI Engineer<set attributeName="opacity" to="1" begin="3.17s" fill="freeze"/></text>
 
-<rect
-x="20"
-y="20"
-width="860"
-height="40"
-rx="12"
-ry="12"
-class="title"/>
+  <!-- ================================================================= -->
+  <!-- COMMAND 3 : tree projects                                         -->
+  <!-- Frames: prompt -> t -> tr -> tre -> ... -> tree projects          -->
+  <!-- ================================================================= -->
+  <text x="30" y="207" font-family="'Fira Code', monospace" font-size="20" xml:space="preserve"><tspan fill="#4CAF50" opacity="0">alireza@github:~$ <set attributeName="opacity" to="1" begin="3.87s" fill="freeze"/></tspan><tspan fill="#FFFFFF" opacity="0">t<set attributeName="opacity" to="1" begin="4.245s" fill="freeze"/></tspan><tspan fill="#FFFFFF" opacity="0">r<set attributeName="opacity" to="1" begin="4.35s" fill="freeze"/></tspan><tspan fill="#FFFFFF" opacity="0">e<set attributeName="opacity" to="1" begin="4.445s" fill="freeze"/></tspan><tspan fill="#FFFFFF" opacity="0">e<set attributeName="opacity" to="1" begin="4.505s" fill="freeze"/></tspan><tspan fill="#FFFFFF" opacity="0"> <set attributeName="opacity" to="1" begin="4.595s" fill="freeze"/></tspan><tspan fill="#FFFFFF" opacity="0">p<set attributeName="opacity" to="1" begin="4.705s" fill="freeze"/></tspan><tspan fill="#FFFFFF" opacity="0">r<set attributeName="opacity" to="1" begin="4.775s" fill="freeze"/></tspan><tspan fill="#FFFFFF" opacity="0">o<set attributeName="opacity" to="1" begin="4.875s" fill="freeze"/></tspan><tspan fill="#FFFFFF" opacity="0">j<set attributeName="opacity" to="1" begin="5.005s" fill="freeze"/></tspan><tspan fill="#FFFFFF" opacity="0">e<set attributeName="opacity" to="1" begin="5.07s" fill="freeze"/></tspan><tspan fill="#FFFFFF" opacity="0">c<set attributeName="opacity" to="1" begin="5.17s" fill="freeze"/></tspan><tspan fill="#FFFFFF" opacity="0">t<set attributeName="opacity" to="1" begin="5.255s" fill="freeze"/></tspan><tspan fill="#FFFFFF" opacity="0">s<set attributeName="opacity" to="1" begin="5.375s" fill="freeze"/></tspan></text>
 
-<!-- Buttons -->
+  <!-- Output of tree projects (cascades in line by line) -->
+  <text x="30" y="235" font-family="'Fira Code', monospace" font-size="20" xml:space="preserve"
+        fill="#D4D4D4" opacity="0">projects<set attributeName="opacity" to="1" begin="5.875s" fill="freeze"/></text>
+  <text x="30" y="263" font-family="'Fira Code', monospace" font-size="20" xml:space="preserve"
+        fill="#D4D4D4" opacity="0">├── book-genre-classifier<set attributeName="opacity" to="1" begin="5.935s" fill="freeze"/></text>
+  <text x="30" y="291" font-family="'Fira Code', monospace" font-size="20" xml:space="preserve"
+        fill="#D4D4D4" opacity="0">├── SQL-Agent<set attributeName="opacity" to="1" begin="5.995s" fill="freeze"/></text>
+  <text x="30" y="319" font-family="'Fira Code', monospace" font-size="20" xml:space="preserve"
+        fill="#D4D4D4" opacity="0">├── digikala_search<set attributeName="opacity" to="1" begin="6.055s" fill="freeze"/></text>
+  <text x="30" y="347" font-family="'Fira Code', monospace" font-size="20" xml:space="preserve"
+        fill="#D4D4D4" opacity="0">├── house-price-regression<set attributeName="opacity" to="1" begin="6.115s" fill="freeze"/></text>
+  <text x="30" y="375" font-family="'Fira Code', monospace" font-size="20" xml:space="preserve"
+        fill="#D4D4D4" opacity="0">├── python-messager<set attributeName="opacity" to="1" begin="6.175s" fill="freeze"/></text>
+  <text x="30" y="403" font-family="'Fira Code', monospace" font-size="20" xml:space="preserve"
+        fill="#D4D4D4" opacity="0">└── AgenticAI-ToolCalling<set attributeName="opacity" to="1" begin="6.235s" fill="freeze"/></text>
 
-<circle cx="45" cy="40" r="7" class="red"/>
-<circle cx="70" cy="40" r="7" class="yellow"/>
-<circle cx="95" cy="40" r="7" class="green"/>
+  <!-- ================================================================= -->
+  <!-- FINAL PROMPT (session settles here, cursor blinks forever)        -->
+  <!-- ================================================================= -->
+  <text x="30" y="431" font-family="'Fira Code', monospace" font-size="20" xml:space="preserve"><tspan fill="#4CAF50" opacity="0">alireza@github:~$ <set attributeName="opacity" to="1" begin="6.935s" fill="freeze"/></tspan></text>
 
-<!-- Title -->
+  <!-- ================================================================= -->
+  <!-- BLINKING CURSOR                                                   -->
+  <!-- A single block that jumps (never fades/slides) to the exact spot -->
+  <!-- the next character or line appears, tracking the whole session.  -->
+  <!-- ================================================================= -->
+  <g transform="translate(246,95)">
 
-<text
-x="450"
-y="45"
-text-anchor="middle"
-class="small">
-alireza@github:~
-</text>
+    <!-- Command 1: whoami -->
+    <set attributeName="transform" to="translate(258,95)"  begin="0.39s"  fill="freeze"/>
+    <set attributeName="transform" to="translate(270,95)"  begin="0.5s"   fill="freeze"/>
+    <set attributeName="transform" to="translate(282,95)"  begin="0.57s"  fill="freeze"/>
+    <set attributeName="transform" to="translate(294,95)"  begin="0.67s"  fill="freeze"/>
+    <set attributeName="transform" to="translate(306,95)"  begin="0.8s"   fill="freeze"/>
+    <set attributeName="transform" to="translate(318,95)"  begin="0.865s" fill="freeze"/>
 
-<!-- Terminal -->
+    <!-- output appears -> cursor drops to the next prompt line -->
+    <set attributeName="transform" to="translate(30,151)"  begin="1.365s" fill="freeze"/>
 
-<!-- whoami typing -->
+    <!-- Command 2: pwd -->
+    <set attributeName="transform" to="translate(246,151)" begin="2.065s" fill="freeze"/>
+    <set attributeName="transform" to="translate(258,151)" begin="2.465s" fill="freeze"/>
+    <set attributeName="transform" to="translate(270,151)" begin="2.55s"  fill="freeze"/>
+    <set attributeName="transform" to="translate(282,151)" begin="2.67s"  fill="freeze"/>
 
-<text x="45" y="90">
+    <!-- output appears -> cursor drops to the next prompt line -->
+    <set attributeName="transform" to="translate(30,207)"  begin="3.17s"  fill="freeze"/>
 
-<tspan opacity="0">
-a
-<animate attributeName="opacity"
-begin="0s"
-dur="0.01s"
-fill="freeze"
-from="0"
-to="1"/>
-</tspan>
+    <!-- Command 3: tree projects -->
+    <set attributeName="transform" to="translate(246,207)" begin="3.87s"  fill="freeze"/>
+    <set attributeName="transform" to="translate(258,207)" begin="4.245s" fill="freeze"/>
+    <set attributeName="transform" to="translate(270,207)" begin="4.35s"  fill="freeze"/>
+    <set attributeName="transform" to="translate(282,207)" begin="4.445s" fill="freeze"/>
+    <set attributeName="transform" to="translate(294,207)" begin="4.505s" fill="freeze"/>
+    <set attributeName="transform" to="translate(306,207)" begin="4.595s" fill="freeze"/>
+    <set attributeName="transform" to="translate(318,207)" begin="4.705s" fill="freeze"/>
+    <set attributeName="transform" to="translate(330,207)" begin="4.775s" fill="freeze"/>
+    <set attributeName="transform" to="translate(342,207)" begin="4.875s" fill="freeze"/>
+    <set attributeName="transform" to="translate(354,207)" begin="5.005s" fill="freeze"/>
+    <set attributeName="transform" to="translate(366,207)" begin="5.07s"  fill="freeze"/>
+    <set attributeName="transform" to="translate(378,207)" begin="5.17s"  fill="freeze"/>
+    <set attributeName="transform" to="translate(390,207)" begin="5.255s" fill="freeze"/>
+    <set attributeName="transform" to="translate(402,207)" begin="5.375s" fill="freeze"/>
 
-<tspan opacity="0">
-l
-<animate attributeName="opacity"
-begin="0.05s"
-dur="0.01s"
-fill="freeze"
-from="0"
-to="1"/>
-</tspan>
+    <!-- tree output cascades line by line -> cursor leads each new line -->
+    <set attributeName="transform" to="translate(30,263)"  begin="5.875s" fill="freeze"/>
+    <set attributeName="transform" to="translate(30,291)"  begin="5.935s" fill="freeze"/>
+    <set attributeName="transform" to="translate(30,319)"  begin="5.995s" fill="freeze"/>
+    <set attributeName="transform" to="translate(30,347)"  begin="6.055s" fill="freeze"/>
+    <set attributeName="transform" to="translate(30,375)"  begin="6.115s" fill="freeze"/>
+    <set attributeName="transform" to="translate(30,403)"  begin="6.175s" fill="freeze"/>
+    <set attributeName="transform" to="translate(30,431)"  begin="6.235s" fill="freeze"/>
 
-<tspan opacity="0">
-i
-<animate attributeName="opacity"
-begin="0.10s"
-dur="0.01s"
-fill="freeze"
-from="0"
-to="1"/>
-</tspan>
+    <!-- final prompt appears -> cursor settles here and blinks forever -->
+    <set attributeName="transform" to="translate(246,431)" begin="6.935s" fill="freeze"/>
 
-<tspan opacity="0">
-r
-<animate attributeName="opacity"
-begin="0.15s"
-dur="0.01s"
-fill="freeze"
-from="0"
-to="1"/>
-</tspan>
+    <!-- The cursor block itself: hard on/off blink, no fading, never stops -->
+    <rect x="0" y="-18" width="11" height="24" fill="#4CAF50">
+      <animate attributeName="opacity" values="1;0" calcMode="discrete"
+               dur="1.06s" begin="0s" repeatCount="indefinite"/>
+    </rect>
 
-<tspan opacity="0">
-e
-<animate attributeName="opacity"
-begin="0.20s"
-dur="0.01s"
-fill="freeze"
-from="0"
-to="1"/>
-</tspan>
-
-<tspan opacity="0">
-z
-<animate attributeName="opacity"
-begin="0.25s"
-dur="0.01s"
-fill="freeze"
-from="0"
-to="1"/>
-</tspan>
-
-<tspan opacity="0">
-a@github:~$ whoami
-<animate attributeName="opacity"
-begin="0.30s"
-dur="0.01s"
-fill="freeze"
-from="0"
-to="1"/>
-</tspan>
-
-</text>
-
-<!-- output -->
-
-<text
-x="45"
-y="120"
-opacity="0">
-
-Alireza Pirooz
-
-<animate
-attributeName="opacity"
-begin="1.4s"
-dur="0.2s"
-fill="freeze"
-from="0"
-to="1"/>
-
-</text>
-
-<text x="45" y="165">
-alireza@github:~$ pwd
-</text>
-
-<text x="45" y="195">
-AI Engineer
-</text>
-
-<text x="45" y="240">
-alireza@github:~$ tree pinned-projects
-</text>
-
-<text x="65" y="275">
-.
-</text>
-
-<text x="65" y="305">
-├── book-genre-classifier
-</text>
-
-<text x="65" y="330">
-├── SQL-Agent
-</text>
-
-<text x="65" y="355">
-├── digikala_search
-</text>
-
-<text x="65" y="380">
-├── house-price-regression
-</text>
-
-<text x="65" y="405">
-├── python-messager
-</text>
-
-<text x="65" y="430">
-└── AgenticAI-ToolCalling
-</text>
-
-<text x="45" y="475">
-alireza@github:~$
-</text>
-
-<rect
-x="260"
-y="458"
-width="12"
-height="22"
-fill="#27c93f">
-
-    <animate
-        attributeName="opacity"
-        values="1;0;1"
-        dur="1s"
-        repeatCount="indefinite"/>
-
-</rect>
+  </g>
 
 </svg>
