@@ -1,144 +1,379 @@
 <svg width="900" height="520" viewBox="0 0 900 520" xmlns="http://www.w3.org/2000/svg">
 
-  <desc>Animated Linux/Ubuntu-style terminal simulation for a GitHub profile README. Pure SVG + SMIL, no scripting.</desc>
+  <desc>Animated Linux/Ubuntu-style terminal simulation for a GitHub profile README. Pure SVG + SMIL, character-grid emulation, no scripting.</desc>
 
   <defs>
-    <!-- Soft drop shadow so the window reads as a floating card on any README background -->
     <filter id="windowShadow" x="-20%" y="-20%" width="140%" height="140%">
       <feDropShadow dx="0" dy="10" stdDeviation="14" flood-color="#000000" flood-opacity="0.45"/>
     </filter>
   </defs>
 
-  <!-- ================================================================= -->
-  <!-- WINDOW CHROME                                                     -->
-  <!-- ================================================================= -->
-
-  <!-- Window body -->
-  <rect x="0" y="0" width="900" height="520" rx="10" ry="10"
-        fill="#1e1e1e" stroke="#000000" stroke-opacity="0.35" stroke-width="1"
-        filter="url(#windowShadow)"/>
-
-  <!-- Title bar (rounded only at the top, flush where it meets the body) -->
-  <path d="M10,0 L890,0 A10,10 0 0 1 900,10 L900,40 L0,40 L0,10 A10,10 0 0 1 10,0 Z"
-        fill="#2d2d2d"/>
-
-  <!-- Mac-style traffic light buttons -->
+  <!-- ================= WINDOW CHROME ================= -->
+  <rect x="0" y="0" width="900" height="520" rx="10" ry="10" fill="#1e1e1e" stroke="#000000" stroke-opacity="0.35" stroke-width="1" filter="url(#windowShadow)"/>
+  <path d="M10,0 L890,0 A10,10 0 0 1 900,10 L900,40 L0,40 L0,10 A10,10 0 0 1 10,0 Z" fill="#2d2d2d"/>
   <circle cx="30" cy="20" r="6" fill="#FF5F56"/>
   <circle cx="50" cy="20" r="6" fill="#FFBD2E"/>
   <circle cx="70" cy="20" r="6" fill="#27C93F"/>
+  <text x="450" y="25" text-anchor="middle" font-family="'Fira Code', monospace" font-size="14" fill="#B0B0B0">alireza@github:~</text>
 
-  <!-- Window title -->
-  <text x="450" y="25" text-anchor="middle" font-family="'Fira Code', monospace"
-        font-size="14" fill="#B0B0B0">alireza@github:~</text>
+  <!-- ================= CHARACTER GRID ================= -->
+  <!-- Every glyph (prompt, command, and output) is an independent cell at an
+       explicit grid position. Each becomes visible via ONE discrete <set>
+       (no interpolation, no whole-word/whole-line opacity reveal). -->
+  <g font-family="'Fira Code', monospace" font-size="20">
+    <text x="30" y="95" textLength="12" lengthAdjust="spacingAndGlyphs" fill="#4CAF50" opacity="0">a<set attributeName="opacity" to="1" begin="0.3s" fill="freeze"/></text>
+    <text x="42" y="95" textLength="12" lengthAdjust="spacingAndGlyphs" fill="#4CAF50" opacity="0">l<set attributeName="opacity" to="1" begin="0.39s" fill="freeze"/></text>
+    <text x="54" y="95" textLength="12" lengthAdjust="spacingAndGlyphs" fill="#4CAF50" opacity="0">i<set attributeName="opacity" to="1" begin="0.5s" fill="freeze"/></text>
+    <text x="66" y="95" textLength="12" lengthAdjust="spacingAndGlyphs" fill="#4CAF50" opacity="0">r<set attributeName="opacity" to="1" begin="0.57s" fill="freeze"/></text>
+    <text x="78" y="95" textLength="12" lengthAdjust="spacingAndGlyphs" fill="#4CAF50" opacity="0">e<set attributeName="opacity" to="1" begin="0.67s" fill="freeze"/></text>
+    <text x="90" y="95" textLength="12" lengthAdjust="spacingAndGlyphs" fill="#4CAF50" opacity="0">z<set attributeName="opacity" to="1" begin="0.8s" fill="freeze"/></text>
+    <text x="102" y="95" textLength="12" lengthAdjust="spacingAndGlyphs" fill="#4CAF50" opacity="0">a<set attributeName="opacity" to="1" begin="0.865s" fill="freeze"/></text>
+    <text x="114" y="95" textLength="12" lengthAdjust="spacingAndGlyphs" fill="#4CAF50" opacity="0">@<set attributeName="opacity" to="1" begin="0.965s" fill="freeze"/></text>
+    <text x="126" y="95" textLength="12" lengthAdjust="spacingAndGlyphs" fill="#4CAF50" opacity="0">g<set attributeName="opacity" to="1" begin="1.05s" fill="freeze"/></text>
+    <text x="138" y="95" textLength="12" lengthAdjust="spacingAndGlyphs" fill="#4CAF50" opacity="0">i<set attributeName="opacity" to="1" begin="1.17s" fill="freeze"/></text>
+    <text x="150" y="95" textLength="12" lengthAdjust="spacingAndGlyphs" fill="#4CAF50" opacity="0">t<set attributeName="opacity" to="1" begin="1.245s" fill="freeze"/></text>
+    <text x="162" y="95" textLength="12" lengthAdjust="spacingAndGlyphs" fill="#4CAF50" opacity="0">h<set attributeName="opacity" to="1" begin="1.35s" fill="freeze"/></text>
+    <text x="174" y="95" textLength="12" lengthAdjust="spacingAndGlyphs" fill="#4CAF50" opacity="0">u<set attributeName="opacity" to="1" begin="1.445s" fill="freeze"/></text>
+    <text x="186" y="95" textLength="12" lengthAdjust="spacingAndGlyphs" fill="#4CAF50" opacity="0">b<set attributeName="opacity" to="1" begin="1.505s" fill="freeze"/></text>
+    <text x="198" y="95" textLength="12" lengthAdjust="spacingAndGlyphs" fill="#4CAF50" opacity="0">:<set attributeName="opacity" to="1" begin="1.595s" fill="freeze"/></text>
+    <text x="210" y="95" textLength="12" lengthAdjust="spacingAndGlyphs" fill="#4CAF50" opacity="0">~<set attributeName="opacity" to="1" begin="1.705s" fill="freeze"/></text>
+    <text x="222" y="95" textLength="12" lengthAdjust="spacingAndGlyphs" fill="#4CAF50" opacity="0">$<set attributeName="opacity" to="1" begin="1.775s" fill="freeze"/></text>
+    <text x="246" y="95" textLength="12" lengthAdjust="spacingAndGlyphs" fill="#FFFFFF" opacity="0">w<set attributeName="opacity" to="1" begin="2.005s" fill="freeze"/></text>
+    <text x="258" y="95" textLength="12" lengthAdjust="spacingAndGlyphs" fill="#FFFFFF" opacity="0">h<set attributeName="opacity" to="1" begin="2.07s" fill="freeze"/></text>
+    <text x="270" y="95" textLength="12" lengthAdjust="spacingAndGlyphs" fill="#FFFFFF" opacity="0">o<set attributeName="opacity" to="1" begin="2.17s" fill="freeze"/></text>
+    <text x="282" y="95" textLength="12" lengthAdjust="spacingAndGlyphs" fill="#FFFFFF" opacity="0">a<set attributeName="opacity" to="1" begin="2.255s" fill="freeze"/></text>
+    <text x="294" y="95" textLength="12" lengthAdjust="spacingAndGlyphs" fill="#FFFFFF" opacity="0">m<set attributeName="opacity" to="1" begin="2.375s" fill="freeze"/></text>
+    <text x="306" y="95" textLength="12" lengthAdjust="spacingAndGlyphs" fill="#FFFFFF" opacity="0">i<set attributeName="opacity" to="1" begin="2.45s" fill="freeze"/></text>
+    <text x="30" y="123" textLength="12" lengthAdjust="spacingAndGlyphs" fill="#D4D4D4" opacity="0">A<set attributeName="opacity" to="1" begin="2.95s" fill="freeze"/></text>
+    <text x="42" y="123" textLength="12" lengthAdjust="spacingAndGlyphs" fill="#D4D4D4" opacity="0">l<set attributeName="opacity" to="1" begin="2.95s" fill="freeze"/></text>
+    <text x="54" y="123" textLength="12" lengthAdjust="spacingAndGlyphs" fill="#D4D4D4" opacity="0">i<set attributeName="opacity" to="1" begin="2.95s" fill="freeze"/></text>
+    <text x="66" y="123" textLength="12" lengthAdjust="spacingAndGlyphs" fill="#D4D4D4" opacity="0">r<set attributeName="opacity" to="1" begin="2.95s" fill="freeze"/></text>
+    <text x="78" y="123" textLength="12" lengthAdjust="spacingAndGlyphs" fill="#D4D4D4" opacity="0">e<set attributeName="opacity" to="1" begin="2.95s" fill="freeze"/></text>
+    <text x="90" y="123" textLength="12" lengthAdjust="spacingAndGlyphs" fill="#D4D4D4" opacity="0">z<set attributeName="opacity" to="1" begin="2.95s" fill="freeze"/></text>
+    <text x="102" y="123" textLength="12" lengthAdjust="spacingAndGlyphs" fill="#D4D4D4" opacity="0">a<set attributeName="opacity" to="1" begin="2.95s" fill="freeze"/></text>
+    <text x="126" y="123" textLength="12" lengthAdjust="spacingAndGlyphs" fill="#D4D4D4" opacity="0">P<set attributeName="opacity" to="1" begin="2.95s" fill="freeze"/></text>
+    <text x="138" y="123" textLength="12" lengthAdjust="spacingAndGlyphs" fill="#D4D4D4" opacity="0">i<set attributeName="opacity" to="1" begin="2.95s" fill="freeze"/></text>
+    <text x="150" y="123" textLength="12" lengthAdjust="spacingAndGlyphs" fill="#D4D4D4" opacity="0">r<set attributeName="opacity" to="1" begin="2.95s" fill="freeze"/></text>
+    <text x="162" y="123" textLength="12" lengthAdjust="spacingAndGlyphs" fill="#D4D4D4" opacity="0">o<set attributeName="opacity" to="1" begin="2.95s" fill="freeze"/></text>
+    <text x="174" y="123" textLength="12" lengthAdjust="spacingAndGlyphs" fill="#D4D4D4" opacity="0">o<set attributeName="opacity" to="1" begin="2.95s" fill="freeze"/></text>
+    <text x="186" y="123" textLength="12" lengthAdjust="spacingAndGlyphs" fill="#D4D4D4" opacity="0">z<set attributeName="opacity" to="1" begin="2.95s" fill="freeze"/></text>
+    <text x="30" y="151" textLength="12" lengthAdjust="spacingAndGlyphs" fill="#4CAF50" opacity="0">a<set attributeName="opacity" to="1" begin="3.65s" fill="freeze"/></text>
+    <text x="42" y="151" textLength="12" lengthAdjust="spacingAndGlyphs" fill="#4CAF50" opacity="0">l<set attributeName="opacity" to="1" begin="3.755s" fill="freeze"/></text>
+    <text x="54" y="151" textLength="12" lengthAdjust="spacingAndGlyphs" fill="#4CAF50" opacity="0">i<set attributeName="opacity" to="1" begin="3.85s" fill="freeze"/></text>
+    <text x="66" y="151" textLength="12" lengthAdjust="spacingAndGlyphs" fill="#4CAF50" opacity="0">r<set attributeName="opacity" to="1" begin="3.91s" fill="freeze"/></text>
+    <text x="78" y="151" textLength="12" lengthAdjust="spacingAndGlyphs" fill="#4CAF50" opacity="0">e<set attributeName="opacity" to="1" begin="4.0s" fill="freeze"/></text>
+    <text x="90" y="151" textLength="12" lengthAdjust="spacingAndGlyphs" fill="#4CAF50" opacity="0">z<set attributeName="opacity" to="1" begin="4.11s" fill="freeze"/></text>
+    <text x="102" y="151" textLength="12" lengthAdjust="spacingAndGlyphs" fill="#4CAF50" opacity="0">a<set attributeName="opacity" to="1" begin="4.18s" fill="freeze"/></text>
+    <text x="114" y="151" textLength="12" lengthAdjust="spacingAndGlyphs" fill="#4CAF50" opacity="0">@<set attributeName="opacity" to="1" begin="4.28s" fill="freeze"/></text>
+    <text x="126" y="151" textLength="12" lengthAdjust="spacingAndGlyphs" fill="#4CAF50" opacity="0">g<set attributeName="opacity" to="1" begin="4.41s" fill="freeze"/></text>
+    <text x="138" y="151" textLength="12" lengthAdjust="spacingAndGlyphs" fill="#4CAF50" opacity="0">i<set attributeName="opacity" to="1" begin="4.475s" fill="freeze"/></text>
+    <text x="150" y="151" textLength="12" lengthAdjust="spacingAndGlyphs" fill="#4CAF50" opacity="0">t<set attributeName="opacity" to="1" begin="4.575s" fill="freeze"/></text>
+    <text x="162" y="151" textLength="12" lengthAdjust="spacingAndGlyphs" fill="#4CAF50" opacity="0">h<set attributeName="opacity" to="1" begin="4.66s" fill="freeze"/></text>
+    <text x="174" y="151" textLength="12" lengthAdjust="spacingAndGlyphs" fill="#4CAF50" opacity="0">u<set attributeName="opacity" to="1" begin="4.78s" fill="freeze"/></text>
+    <text x="186" y="151" textLength="12" lengthAdjust="spacingAndGlyphs" fill="#4CAF50" opacity="0">b<set attributeName="opacity" to="1" begin="4.855s" fill="freeze"/></text>
+    <text x="198" y="151" textLength="12" lengthAdjust="spacingAndGlyphs" fill="#4CAF50" opacity="0">:<set attributeName="opacity" to="1" begin="4.96s" fill="freeze"/></text>
+    <text x="210" y="151" textLength="12" lengthAdjust="spacingAndGlyphs" fill="#4CAF50" opacity="0">~<set attributeName="opacity" to="1" begin="5.055s" fill="freeze"/></text>
+    <text x="222" y="151" textLength="12" lengthAdjust="spacingAndGlyphs" fill="#4CAF50" opacity="0">$<set attributeName="opacity" to="1" begin="5.115s" fill="freeze"/></text>
+    <text x="246" y="151" textLength="12" lengthAdjust="spacingAndGlyphs" fill="#FFFFFF" opacity="0">p<set attributeName="opacity" to="1" begin="5.315s" fill="freeze"/></text>
+    <text x="258" y="151" textLength="12" lengthAdjust="spacingAndGlyphs" fill="#FFFFFF" opacity="0">w<set attributeName="opacity" to="1" begin="5.385s" fill="freeze"/></text>
+    <text x="270" y="151" textLength="12" lengthAdjust="spacingAndGlyphs" fill="#FFFFFF" opacity="0">d<set attributeName="opacity" to="1" begin="5.485s" fill="freeze"/></text>
+    <text x="30" y="179" textLength="12" lengthAdjust="spacingAndGlyphs" fill="#D4D4D4" opacity="0">A<set attributeName="opacity" to="1" begin="5.985s" fill="freeze"/></text>
+    <text x="42" y="179" textLength="12" lengthAdjust="spacingAndGlyphs" fill="#D4D4D4" opacity="0">I<set attributeName="opacity" to="1" begin="5.985s" fill="freeze"/></text>
+    <text x="66" y="179" textLength="12" lengthAdjust="spacingAndGlyphs" fill="#D4D4D4" opacity="0">E<set attributeName="opacity" to="1" begin="5.985s" fill="freeze"/></text>
+    <text x="78" y="179" textLength="12" lengthAdjust="spacingAndGlyphs" fill="#D4D4D4" opacity="0">n<set attributeName="opacity" to="1" begin="5.985s" fill="freeze"/></text>
+    <text x="90" y="179" textLength="12" lengthAdjust="spacingAndGlyphs" fill="#D4D4D4" opacity="0">g<set attributeName="opacity" to="1" begin="5.985s" fill="freeze"/></text>
+    <text x="102" y="179" textLength="12" lengthAdjust="spacingAndGlyphs" fill="#D4D4D4" opacity="0">i<set attributeName="opacity" to="1" begin="5.985s" fill="freeze"/></text>
+    <text x="114" y="179" textLength="12" lengthAdjust="spacingAndGlyphs" fill="#D4D4D4" opacity="0">n<set attributeName="opacity" to="1" begin="5.985s" fill="freeze"/></text>
+    <text x="126" y="179" textLength="12" lengthAdjust="spacingAndGlyphs" fill="#D4D4D4" opacity="0">e<set attributeName="opacity" to="1" begin="5.985s" fill="freeze"/></text>
+    <text x="138" y="179" textLength="12" lengthAdjust="spacingAndGlyphs" fill="#D4D4D4" opacity="0">e<set attributeName="opacity" to="1" begin="5.985s" fill="freeze"/></text>
+    <text x="150" y="179" textLength="12" lengthAdjust="spacingAndGlyphs" fill="#D4D4D4" opacity="0">r<set attributeName="opacity" to="1" begin="5.985s" fill="freeze"/></text>
+    <text x="30" y="207" textLength="12" lengthAdjust="spacingAndGlyphs" fill="#4CAF50" opacity="0">a<set attributeName="opacity" to="1" begin="6.685s" fill="freeze"/></text>
+    <text x="42" y="207" textLength="12" lengthAdjust="spacingAndGlyphs" fill="#4CAF50" opacity="0">l<set attributeName="opacity" to="1" begin="6.815s" fill="freeze"/></text>
+    <text x="54" y="207" textLength="12" lengthAdjust="spacingAndGlyphs" fill="#4CAF50" opacity="0">i<set attributeName="opacity" to="1" begin="6.88s" fill="freeze"/></text>
+    <text x="66" y="207" textLength="12" lengthAdjust="spacingAndGlyphs" fill="#4CAF50" opacity="0">r<set attributeName="opacity" to="1" begin="6.98s" fill="freeze"/></text>
+    <text x="78" y="207" textLength="12" lengthAdjust="spacingAndGlyphs" fill="#4CAF50" opacity="0">e<set attributeName="opacity" to="1" begin="7.065s" fill="freeze"/></text>
+    <text x="90" y="207" textLength="12" lengthAdjust="spacingAndGlyphs" fill="#4CAF50" opacity="0">z<set attributeName="opacity" to="1" begin="7.185s" fill="freeze"/></text>
+    <text x="102" y="207" textLength="12" lengthAdjust="spacingAndGlyphs" fill="#4CAF50" opacity="0">a<set attributeName="opacity" to="1" begin="7.26s" fill="freeze"/></text>
+    <text x="114" y="207" textLength="12" lengthAdjust="spacingAndGlyphs" fill="#4CAF50" opacity="0">@<set attributeName="opacity" to="1" begin="7.365s" fill="freeze"/></text>
+    <text x="126" y="207" textLength="12" lengthAdjust="spacingAndGlyphs" fill="#4CAF50" opacity="0">g<set attributeName="opacity" to="1" begin="7.46s" fill="freeze"/></text>
+    <text x="138" y="207" textLength="12" lengthAdjust="spacingAndGlyphs" fill="#4CAF50" opacity="0">i<set attributeName="opacity" to="1" begin="7.52s" fill="freeze"/></text>
+    <text x="150" y="207" textLength="12" lengthAdjust="spacingAndGlyphs" fill="#4CAF50" opacity="0">t<set attributeName="opacity" to="1" begin="7.61s" fill="freeze"/></text>
+    <text x="162" y="207" textLength="12" lengthAdjust="spacingAndGlyphs" fill="#4CAF50" opacity="0">h<set attributeName="opacity" to="1" begin="7.72s" fill="freeze"/></text>
+    <text x="174" y="207" textLength="12" lengthAdjust="spacingAndGlyphs" fill="#4CAF50" opacity="0">u<set attributeName="opacity" to="1" begin="7.79s" fill="freeze"/></text>
+    <text x="186" y="207" textLength="12" lengthAdjust="spacingAndGlyphs" fill="#4CAF50" opacity="0">b<set attributeName="opacity" to="1" begin="7.89s" fill="freeze"/></text>
+    <text x="198" y="207" textLength="12" lengthAdjust="spacingAndGlyphs" fill="#4CAF50" opacity="0">:<set attributeName="opacity" to="1" begin="8.02s" fill="freeze"/></text>
+    <text x="210" y="207" textLength="12" lengthAdjust="spacingAndGlyphs" fill="#4CAF50" opacity="0">~<set attributeName="opacity" to="1" begin="8.085s" fill="freeze"/></text>
+    <text x="222" y="207" textLength="12" lengthAdjust="spacingAndGlyphs" fill="#4CAF50" opacity="0">$<set attributeName="opacity" to="1" begin="8.185s" fill="freeze"/></text>
+    <text x="246" y="207" textLength="12" lengthAdjust="spacingAndGlyphs" fill="#FFFFFF" opacity="0">t<set attributeName="opacity" to="1" begin="8.39s" fill="freeze"/></text>
+    <text x="258" y="207" textLength="12" lengthAdjust="spacingAndGlyphs" fill="#FFFFFF" opacity="0">r<set attributeName="opacity" to="1" begin="8.465s" fill="freeze"/></text>
+    <text x="270" y="207" textLength="12" lengthAdjust="spacingAndGlyphs" fill="#FFFFFF" opacity="0">e<set attributeName="opacity" to="1" begin="8.57s" fill="freeze"/></text>
+    <text x="282" y="207" textLength="12" lengthAdjust="spacingAndGlyphs" fill="#FFFFFF" opacity="0">e<set attributeName="opacity" to="1" begin="8.665s" fill="freeze"/></text>
+    <text x="306" y="207" textLength="12" lengthAdjust="spacingAndGlyphs" fill="#FFFFFF" opacity="0">p<set attributeName="opacity" to="1" begin="8.815s" fill="freeze"/></text>
+    <text x="318" y="207" textLength="12" lengthAdjust="spacingAndGlyphs" fill="#FFFFFF" opacity="0">r<set attributeName="opacity" to="1" begin="8.925s" fill="freeze"/></text>
+    <text x="330" y="207" textLength="12" lengthAdjust="spacingAndGlyphs" fill="#FFFFFF" opacity="0">o<set attributeName="opacity" to="1" begin="8.995s" fill="freeze"/></text>
+    <text x="342" y="207" textLength="12" lengthAdjust="spacingAndGlyphs" fill="#FFFFFF" opacity="0">j<set attributeName="opacity" to="1" begin="9.095s" fill="freeze"/></text>
+    <text x="354" y="207" textLength="12" lengthAdjust="spacingAndGlyphs" fill="#FFFFFF" opacity="0">e<set attributeName="opacity" to="1" begin="9.225s" fill="freeze"/></text>
+    <text x="366" y="207" textLength="12" lengthAdjust="spacingAndGlyphs" fill="#FFFFFF" opacity="0">c<set attributeName="opacity" to="1" begin="9.29s" fill="freeze"/></text>
+    <text x="378" y="207" textLength="12" lengthAdjust="spacingAndGlyphs" fill="#FFFFFF" opacity="0">t<set attributeName="opacity" to="1" begin="9.39s" fill="freeze"/></text>
+    <text x="390" y="207" textLength="12" lengthAdjust="spacingAndGlyphs" fill="#FFFFFF" opacity="0">s<set attributeName="opacity" to="1" begin="9.475s" fill="freeze"/></text>
+    <text x="30" y="235" textLength="12" lengthAdjust="spacingAndGlyphs" fill="#D4D4D4" opacity="0">p<set attributeName="opacity" to="1" begin="9.975s" fill="freeze"/></text>
+    <text x="42" y="235" textLength="12" lengthAdjust="spacingAndGlyphs" fill="#D4D4D4" opacity="0">r<set attributeName="opacity" to="1" begin="9.975s" fill="freeze"/></text>
+    <text x="54" y="235" textLength="12" lengthAdjust="spacingAndGlyphs" fill="#D4D4D4" opacity="0">o<set attributeName="opacity" to="1" begin="9.975s" fill="freeze"/></text>
+    <text x="66" y="235" textLength="12" lengthAdjust="spacingAndGlyphs" fill="#D4D4D4" opacity="0">j<set attributeName="opacity" to="1" begin="9.975s" fill="freeze"/></text>
+    <text x="78" y="235" textLength="12" lengthAdjust="spacingAndGlyphs" fill="#D4D4D4" opacity="0">e<set attributeName="opacity" to="1" begin="9.975s" fill="freeze"/></text>
+    <text x="90" y="235" textLength="12" lengthAdjust="spacingAndGlyphs" fill="#D4D4D4" opacity="0">c<set attributeName="opacity" to="1" begin="9.975s" fill="freeze"/></text>
+    <text x="102" y="235" textLength="12" lengthAdjust="spacingAndGlyphs" fill="#D4D4D4" opacity="0">t<set attributeName="opacity" to="1" begin="9.975s" fill="freeze"/></text>
+    <text x="114" y="235" textLength="12" lengthAdjust="spacingAndGlyphs" fill="#D4D4D4" opacity="0">s<set attributeName="opacity" to="1" begin="9.975s" fill="freeze"/></text>
+    <text x="30" y="263" textLength="12" lengthAdjust="spacingAndGlyphs" fill="#D4D4D4" opacity="0">├<set attributeName="opacity" to="1" begin="10.035s" fill="freeze"/></text>
+    <text x="42" y="263" textLength="12" lengthAdjust="spacingAndGlyphs" fill="#D4D4D4" opacity="0">─<set attributeName="opacity" to="1" begin="10.035s" fill="freeze"/></text>
+    <text x="54" y="263" textLength="12" lengthAdjust="spacingAndGlyphs" fill="#D4D4D4" opacity="0">─<set attributeName="opacity" to="1" begin="10.035s" fill="freeze"/></text>
+    <text x="78" y="263" textLength="12" lengthAdjust="spacingAndGlyphs" fill="#D4D4D4" opacity="0">b<set attributeName="opacity" to="1" begin="10.035s" fill="freeze"/></text>
+    <text x="90" y="263" textLength="12" lengthAdjust="spacingAndGlyphs" fill="#D4D4D4" opacity="0">o<set attributeName="opacity" to="1" begin="10.035s" fill="freeze"/></text>
+    <text x="102" y="263" textLength="12" lengthAdjust="spacingAndGlyphs" fill="#D4D4D4" opacity="0">o<set attributeName="opacity" to="1" begin="10.035s" fill="freeze"/></text>
+    <text x="114" y="263" textLength="12" lengthAdjust="spacingAndGlyphs" fill="#D4D4D4" opacity="0">k<set attributeName="opacity" to="1" begin="10.035s" fill="freeze"/></text>
+    <text x="126" y="263" textLength="12" lengthAdjust="spacingAndGlyphs" fill="#D4D4D4" opacity="0">-<set attributeName="opacity" to="1" begin="10.035s" fill="freeze"/></text>
+    <text x="138" y="263" textLength="12" lengthAdjust="spacingAndGlyphs" fill="#D4D4D4" opacity="0">g<set attributeName="opacity" to="1" begin="10.035s" fill="freeze"/></text>
+    <text x="150" y="263" textLength="12" lengthAdjust="spacingAndGlyphs" fill="#D4D4D4" opacity="0">e<set attributeName="opacity" to="1" begin="10.035s" fill="freeze"/></text>
+    <text x="162" y="263" textLength="12" lengthAdjust="spacingAndGlyphs" fill="#D4D4D4" opacity="0">n<set attributeName="opacity" to="1" begin="10.035s" fill="freeze"/></text>
+    <text x="174" y="263" textLength="12" lengthAdjust="spacingAndGlyphs" fill="#D4D4D4" opacity="0">r<set attributeName="opacity" to="1" begin="10.035s" fill="freeze"/></text>
+    <text x="186" y="263" textLength="12" lengthAdjust="spacingAndGlyphs" fill="#D4D4D4" opacity="0">e<set attributeName="opacity" to="1" begin="10.035s" fill="freeze"/></text>
+    <text x="198" y="263" textLength="12" lengthAdjust="spacingAndGlyphs" fill="#D4D4D4" opacity="0">-<set attributeName="opacity" to="1" begin="10.035s" fill="freeze"/></text>
+    <text x="210" y="263" textLength="12" lengthAdjust="spacingAndGlyphs" fill="#D4D4D4" opacity="0">c<set attributeName="opacity" to="1" begin="10.035s" fill="freeze"/></text>
+    <text x="222" y="263" textLength="12" lengthAdjust="spacingAndGlyphs" fill="#D4D4D4" opacity="0">l<set attributeName="opacity" to="1" begin="10.035s" fill="freeze"/></text>
+    <text x="234" y="263" textLength="12" lengthAdjust="spacingAndGlyphs" fill="#D4D4D4" opacity="0">a<set attributeName="opacity" to="1" begin="10.035s" fill="freeze"/></text>
+    <text x="246" y="263" textLength="12" lengthAdjust="spacingAndGlyphs" fill="#D4D4D4" opacity="0">s<set attributeName="opacity" to="1" begin="10.035s" fill="freeze"/></text>
+    <text x="258" y="263" textLength="12" lengthAdjust="spacingAndGlyphs" fill="#D4D4D4" opacity="0">s<set attributeName="opacity" to="1" begin="10.035s" fill="freeze"/></text>
+    <text x="270" y="263" textLength="12" lengthAdjust="spacingAndGlyphs" fill="#D4D4D4" opacity="0">i<set attributeName="opacity" to="1" begin="10.035s" fill="freeze"/></text>
+    <text x="282" y="263" textLength="12" lengthAdjust="spacingAndGlyphs" fill="#D4D4D4" opacity="0">f<set attributeName="opacity" to="1" begin="10.035s" fill="freeze"/></text>
+    <text x="294" y="263" textLength="12" lengthAdjust="spacingAndGlyphs" fill="#D4D4D4" opacity="0">i<set attributeName="opacity" to="1" begin="10.035s" fill="freeze"/></text>
+    <text x="306" y="263" textLength="12" lengthAdjust="spacingAndGlyphs" fill="#D4D4D4" opacity="0">e<set attributeName="opacity" to="1" begin="10.035s" fill="freeze"/></text>
+    <text x="318" y="263" textLength="12" lengthAdjust="spacingAndGlyphs" fill="#D4D4D4" opacity="0">r<set attributeName="opacity" to="1" begin="10.035s" fill="freeze"/></text>
+    <text x="30" y="291" textLength="12" lengthAdjust="spacingAndGlyphs" fill="#D4D4D4" opacity="0">├<set attributeName="opacity" to="1" begin="10.095s" fill="freeze"/></text>
+    <text x="42" y="291" textLength="12" lengthAdjust="spacingAndGlyphs" fill="#D4D4D4" opacity="0">─<set attributeName="opacity" to="1" begin="10.095s" fill="freeze"/></text>
+    <text x="54" y="291" textLength="12" lengthAdjust="spacingAndGlyphs" fill="#D4D4D4" opacity="0">─<set attributeName="opacity" to="1" begin="10.095s" fill="freeze"/></text>
+    <text x="78" y="291" textLength="12" lengthAdjust="spacingAndGlyphs" fill="#D4D4D4" opacity="0">S<set attributeName="opacity" to="1" begin="10.095s" fill="freeze"/></text>
+    <text x="90" y="291" textLength="12" lengthAdjust="spacingAndGlyphs" fill="#D4D4D4" opacity="0">Q<set attributeName="opacity" to="1" begin="10.095s" fill="freeze"/></text>
+    <text x="102" y="291" textLength="12" lengthAdjust="spacingAndGlyphs" fill="#D4D4D4" opacity="0">L<set attributeName="opacity" to="1" begin="10.095s" fill="freeze"/></text>
+    <text x="114" y="291" textLength="12" lengthAdjust="spacingAndGlyphs" fill="#D4D4D4" opacity="0">-<set attributeName="opacity" to="1" begin="10.095s" fill="freeze"/></text>
+    <text x="126" y="291" textLength="12" lengthAdjust="spacingAndGlyphs" fill="#D4D4D4" opacity="0">A<set attributeName="opacity" to="1" begin="10.095s" fill="freeze"/></text>
+    <text x="138" y="291" textLength="12" lengthAdjust="spacingAndGlyphs" fill="#D4D4D4" opacity="0">g<set attributeName="opacity" to="1" begin="10.095s" fill="freeze"/></text>
+    <text x="150" y="291" textLength="12" lengthAdjust="spacingAndGlyphs" fill="#D4D4D4" opacity="0">e<set attributeName="opacity" to="1" begin="10.095s" fill="freeze"/></text>
+    <text x="162" y="291" textLength="12" lengthAdjust="spacingAndGlyphs" fill="#D4D4D4" opacity="0">n<set attributeName="opacity" to="1" begin="10.095s" fill="freeze"/></text>
+    <text x="174" y="291" textLength="12" lengthAdjust="spacingAndGlyphs" fill="#D4D4D4" opacity="0">t<set attributeName="opacity" to="1" begin="10.095s" fill="freeze"/></text>
+    <text x="30" y="319" textLength="12" lengthAdjust="spacingAndGlyphs" fill="#D4D4D4" opacity="0">├<set attributeName="opacity" to="1" begin="10.155s" fill="freeze"/></text>
+    <text x="42" y="319" textLength="12" lengthAdjust="spacingAndGlyphs" fill="#D4D4D4" opacity="0">─<set attributeName="opacity" to="1" begin="10.155s" fill="freeze"/></text>
+    <text x="54" y="319" textLength="12" lengthAdjust="spacingAndGlyphs" fill="#D4D4D4" opacity="0">─<set attributeName="opacity" to="1" begin="10.155s" fill="freeze"/></text>
+    <text x="78" y="319" textLength="12" lengthAdjust="spacingAndGlyphs" fill="#D4D4D4" opacity="0">d<set attributeName="opacity" to="1" begin="10.155s" fill="freeze"/></text>
+    <text x="90" y="319" textLength="12" lengthAdjust="spacingAndGlyphs" fill="#D4D4D4" opacity="0">i<set attributeName="opacity" to="1" begin="10.155s" fill="freeze"/></text>
+    <text x="102" y="319" textLength="12" lengthAdjust="spacingAndGlyphs" fill="#D4D4D4" opacity="0">g<set attributeName="opacity" to="1" begin="10.155s" fill="freeze"/></text>
+    <text x="114" y="319" textLength="12" lengthAdjust="spacingAndGlyphs" fill="#D4D4D4" opacity="0">i<set attributeName="opacity" to="1" begin="10.155s" fill="freeze"/></text>
+    <text x="126" y="319" textLength="12" lengthAdjust="spacingAndGlyphs" fill="#D4D4D4" opacity="0">k<set attributeName="opacity" to="1" begin="10.155s" fill="freeze"/></text>
+    <text x="138" y="319" textLength="12" lengthAdjust="spacingAndGlyphs" fill="#D4D4D4" opacity="0">a<set attributeName="opacity" to="1" begin="10.155s" fill="freeze"/></text>
+    <text x="150" y="319" textLength="12" lengthAdjust="spacingAndGlyphs" fill="#D4D4D4" opacity="0">l<set attributeName="opacity" to="1" begin="10.155s" fill="freeze"/></text>
+    <text x="162" y="319" textLength="12" lengthAdjust="spacingAndGlyphs" fill="#D4D4D4" opacity="0">a<set attributeName="opacity" to="1" begin="10.155s" fill="freeze"/></text>
+    <text x="174" y="319" textLength="12" lengthAdjust="spacingAndGlyphs" fill="#D4D4D4" opacity="0">_<set attributeName="opacity" to="1" begin="10.155s" fill="freeze"/></text>
+    <text x="186" y="319" textLength="12" lengthAdjust="spacingAndGlyphs" fill="#D4D4D4" opacity="0">s<set attributeName="opacity" to="1" begin="10.155s" fill="freeze"/></text>
+    <text x="198" y="319" textLength="12" lengthAdjust="spacingAndGlyphs" fill="#D4D4D4" opacity="0">e<set attributeName="opacity" to="1" begin="10.155s" fill="freeze"/></text>
+    <text x="210" y="319" textLength="12" lengthAdjust="spacingAndGlyphs" fill="#D4D4D4" opacity="0">a<set attributeName="opacity" to="1" begin="10.155s" fill="freeze"/></text>
+    <text x="222" y="319" textLength="12" lengthAdjust="spacingAndGlyphs" fill="#D4D4D4" opacity="0">r<set attributeName="opacity" to="1" begin="10.155s" fill="freeze"/></text>
+    <text x="234" y="319" textLength="12" lengthAdjust="spacingAndGlyphs" fill="#D4D4D4" opacity="0">c<set attributeName="opacity" to="1" begin="10.155s" fill="freeze"/></text>
+    <text x="246" y="319" textLength="12" lengthAdjust="spacingAndGlyphs" fill="#D4D4D4" opacity="0">h<set attributeName="opacity" to="1" begin="10.155s" fill="freeze"/></text>
+    <text x="30" y="347" textLength="12" lengthAdjust="spacingAndGlyphs" fill="#D4D4D4" opacity="0">├<set attributeName="opacity" to="1" begin="10.215s" fill="freeze"/></text>
+    <text x="42" y="347" textLength="12" lengthAdjust="spacingAndGlyphs" fill="#D4D4D4" opacity="0">─<set attributeName="opacity" to="1" begin="10.215s" fill="freeze"/></text>
+    <text x="54" y="347" textLength="12" lengthAdjust="spacingAndGlyphs" fill="#D4D4D4" opacity="0">─<set attributeName="opacity" to="1" begin="10.215s" fill="freeze"/></text>
+    <text x="78" y="347" textLength="12" lengthAdjust="spacingAndGlyphs" fill="#D4D4D4" opacity="0">h<set attributeName="opacity" to="1" begin="10.215s" fill="freeze"/></text>
+    <text x="90" y="347" textLength="12" lengthAdjust="spacingAndGlyphs" fill="#D4D4D4" opacity="0">o<set attributeName="opacity" to="1" begin="10.215s" fill="freeze"/></text>
+    <text x="102" y="347" textLength="12" lengthAdjust="spacingAndGlyphs" fill="#D4D4D4" opacity="0">u<set attributeName="opacity" to="1" begin="10.215s" fill="freeze"/></text>
+    <text x="114" y="347" textLength="12" lengthAdjust="spacingAndGlyphs" fill="#D4D4D4" opacity="0">s<set attributeName="opacity" to="1" begin="10.215s" fill="freeze"/></text>
+    <text x="126" y="347" textLength="12" lengthAdjust="spacingAndGlyphs" fill="#D4D4D4" opacity="0">e<set attributeName="opacity" to="1" begin="10.215s" fill="freeze"/></text>
+    <text x="138" y="347" textLength="12" lengthAdjust="spacingAndGlyphs" fill="#D4D4D4" opacity="0">-<set attributeName="opacity" to="1" begin="10.215s" fill="freeze"/></text>
+    <text x="150" y="347" textLength="12" lengthAdjust="spacingAndGlyphs" fill="#D4D4D4" opacity="0">p<set attributeName="opacity" to="1" begin="10.215s" fill="freeze"/></text>
+    <text x="162" y="347" textLength="12" lengthAdjust="spacingAndGlyphs" fill="#D4D4D4" opacity="0">r<set attributeName="opacity" to="1" begin="10.215s" fill="freeze"/></text>
+    <text x="174" y="347" textLength="12" lengthAdjust="spacingAndGlyphs" fill="#D4D4D4" opacity="0">i<set attributeName="opacity" to="1" begin="10.215s" fill="freeze"/></text>
+    <text x="186" y="347" textLength="12" lengthAdjust="spacingAndGlyphs" fill="#D4D4D4" opacity="0">c<set attributeName="opacity" to="1" begin="10.215s" fill="freeze"/></text>
+    <text x="198" y="347" textLength="12" lengthAdjust="spacingAndGlyphs" fill="#D4D4D4" opacity="0">e<set attributeName="opacity" to="1" begin="10.215s" fill="freeze"/></text>
+    <text x="210" y="347" textLength="12" lengthAdjust="spacingAndGlyphs" fill="#D4D4D4" opacity="0">-<set attributeName="opacity" to="1" begin="10.215s" fill="freeze"/></text>
+    <text x="222" y="347" textLength="12" lengthAdjust="spacingAndGlyphs" fill="#D4D4D4" opacity="0">r<set attributeName="opacity" to="1" begin="10.215s" fill="freeze"/></text>
+    <text x="234" y="347" textLength="12" lengthAdjust="spacingAndGlyphs" fill="#D4D4D4" opacity="0">e<set attributeName="opacity" to="1" begin="10.215s" fill="freeze"/></text>
+    <text x="246" y="347" textLength="12" lengthAdjust="spacingAndGlyphs" fill="#D4D4D4" opacity="0">g<set attributeName="opacity" to="1" begin="10.215s" fill="freeze"/></text>
+    <text x="258" y="347" textLength="12" lengthAdjust="spacingAndGlyphs" fill="#D4D4D4" opacity="0">r<set attributeName="opacity" to="1" begin="10.215s" fill="freeze"/></text>
+    <text x="270" y="347" textLength="12" lengthAdjust="spacingAndGlyphs" fill="#D4D4D4" opacity="0">e<set attributeName="opacity" to="1" begin="10.215s" fill="freeze"/></text>
+    <text x="282" y="347" textLength="12" lengthAdjust="spacingAndGlyphs" fill="#D4D4D4" opacity="0">s<set attributeName="opacity" to="1" begin="10.215s" fill="freeze"/></text>
+    <text x="294" y="347" textLength="12" lengthAdjust="spacingAndGlyphs" fill="#D4D4D4" opacity="0">s<set attributeName="opacity" to="1" begin="10.215s" fill="freeze"/></text>
+    <text x="306" y="347" textLength="12" lengthAdjust="spacingAndGlyphs" fill="#D4D4D4" opacity="0">i<set attributeName="opacity" to="1" begin="10.215s" fill="freeze"/></text>
+    <text x="318" y="347" textLength="12" lengthAdjust="spacingAndGlyphs" fill="#D4D4D4" opacity="0">o<set attributeName="opacity" to="1" begin="10.215s" fill="freeze"/></text>
+    <text x="330" y="347" textLength="12" lengthAdjust="spacingAndGlyphs" fill="#D4D4D4" opacity="0">n<set attributeName="opacity" to="1" begin="10.215s" fill="freeze"/></text>
+    <text x="30" y="375" textLength="12" lengthAdjust="spacingAndGlyphs" fill="#D4D4D4" opacity="0">├<set attributeName="opacity" to="1" begin="10.275s" fill="freeze"/></text>
+    <text x="42" y="375" textLength="12" lengthAdjust="spacingAndGlyphs" fill="#D4D4D4" opacity="0">─<set attributeName="opacity" to="1" begin="10.275s" fill="freeze"/></text>
+    <text x="54" y="375" textLength="12" lengthAdjust="spacingAndGlyphs" fill="#D4D4D4" opacity="0">─<set attributeName="opacity" to="1" begin="10.275s" fill="freeze"/></text>
+    <text x="78" y="375" textLength="12" lengthAdjust="spacingAndGlyphs" fill="#D4D4D4" opacity="0">p<set attributeName="opacity" to="1" begin="10.275s" fill="freeze"/></text>
+    <text x="90" y="375" textLength="12" lengthAdjust="spacingAndGlyphs" fill="#D4D4D4" opacity="0">y<set attributeName="opacity" to="1" begin="10.275s" fill="freeze"/></text>
+    <text x="102" y="375" textLength="12" lengthAdjust="spacingAndGlyphs" fill="#D4D4D4" opacity="0">t<set attributeName="opacity" to="1" begin="10.275s" fill="freeze"/></text>
+    <text x="114" y="375" textLength="12" lengthAdjust="spacingAndGlyphs" fill="#D4D4D4" opacity="0">h<set attributeName="opacity" to="1" begin="10.275s" fill="freeze"/></text>
+    <text x="126" y="375" textLength="12" lengthAdjust="spacingAndGlyphs" fill="#D4D4D4" opacity="0">o<set attributeName="opacity" to="1" begin="10.275s" fill="freeze"/></text>
+    <text x="138" y="375" textLength="12" lengthAdjust="spacingAndGlyphs" fill="#D4D4D4" opacity="0">n<set attributeName="opacity" to="1" begin="10.275s" fill="freeze"/></text>
+    <text x="150" y="375" textLength="12" lengthAdjust="spacingAndGlyphs" fill="#D4D4D4" opacity="0">-<set attributeName="opacity" to="1" begin="10.275s" fill="freeze"/></text>
+    <text x="162" y="375" textLength="12" lengthAdjust="spacingAndGlyphs" fill="#D4D4D4" opacity="0">m<set attributeName="opacity" to="1" begin="10.275s" fill="freeze"/></text>
+    <text x="174" y="375" textLength="12" lengthAdjust="spacingAndGlyphs" fill="#D4D4D4" opacity="0">e<set attributeName="opacity" to="1" begin="10.275s" fill="freeze"/></text>
+    <text x="186" y="375" textLength="12" lengthAdjust="spacingAndGlyphs" fill="#D4D4D4" opacity="0">s<set attributeName="opacity" to="1" begin="10.275s" fill="freeze"/></text>
+    <text x="198" y="375" textLength="12" lengthAdjust="spacingAndGlyphs" fill="#D4D4D4" opacity="0">s<set attributeName="opacity" to="1" begin="10.275s" fill="freeze"/></text>
+    <text x="210" y="375" textLength="12" lengthAdjust="spacingAndGlyphs" fill="#D4D4D4" opacity="0">a<set attributeName="opacity" to="1" begin="10.275s" fill="freeze"/></text>
+    <text x="222" y="375" textLength="12" lengthAdjust="spacingAndGlyphs" fill="#D4D4D4" opacity="0">g<set attributeName="opacity" to="1" begin="10.275s" fill="freeze"/></text>
+    <text x="234" y="375" textLength="12" lengthAdjust="spacingAndGlyphs" fill="#D4D4D4" opacity="0">e<set attributeName="opacity" to="1" begin="10.275s" fill="freeze"/></text>
+    <text x="246" y="375" textLength="12" lengthAdjust="spacingAndGlyphs" fill="#D4D4D4" opacity="0">r<set attributeName="opacity" to="1" begin="10.275s" fill="freeze"/></text>
+    <text x="30" y="403" textLength="12" lengthAdjust="spacingAndGlyphs" fill="#D4D4D4" opacity="0">└<set attributeName="opacity" to="1" begin="10.335s" fill="freeze"/></text>
+    <text x="42" y="403" textLength="12" lengthAdjust="spacingAndGlyphs" fill="#D4D4D4" opacity="0">─<set attributeName="opacity" to="1" begin="10.335s" fill="freeze"/></text>
+    <text x="54" y="403" textLength="12" lengthAdjust="spacingAndGlyphs" fill="#D4D4D4" opacity="0">─<set attributeName="opacity" to="1" begin="10.335s" fill="freeze"/></text>
+    <text x="78" y="403" textLength="12" lengthAdjust="spacingAndGlyphs" fill="#D4D4D4" opacity="0">A<set attributeName="opacity" to="1" begin="10.335s" fill="freeze"/></text>
+    <text x="90" y="403" textLength="12" lengthAdjust="spacingAndGlyphs" fill="#D4D4D4" opacity="0">g<set attributeName="opacity" to="1" begin="10.335s" fill="freeze"/></text>
+    <text x="102" y="403" textLength="12" lengthAdjust="spacingAndGlyphs" fill="#D4D4D4" opacity="0">e<set attributeName="opacity" to="1" begin="10.335s" fill="freeze"/></text>
+    <text x="114" y="403" textLength="12" lengthAdjust="spacingAndGlyphs" fill="#D4D4D4" opacity="0">n<set attributeName="opacity" to="1" begin="10.335s" fill="freeze"/></text>
+    <text x="126" y="403" textLength="12" lengthAdjust="spacingAndGlyphs" fill="#D4D4D4" opacity="0">t<set attributeName="opacity" to="1" begin="10.335s" fill="freeze"/></text>
+    <text x="138" y="403" textLength="12" lengthAdjust="spacingAndGlyphs" fill="#D4D4D4" opacity="0">i<set attributeName="opacity" to="1" begin="10.335s" fill="freeze"/></text>
+    <text x="150" y="403" textLength="12" lengthAdjust="spacingAndGlyphs" fill="#D4D4D4" opacity="0">c<set attributeName="opacity" to="1" begin="10.335s" fill="freeze"/></text>
+    <text x="162" y="403" textLength="12" lengthAdjust="spacingAndGlyphs" fill="#D4D4D4" opacity="0">A<set attributeName="opacity" to="1" begin="10.335s" fill="freeze"/></text>
+    <text x="174" y="403" textLength="12" lengthAdjust="spacingAndGlyphs" fill="#D4D4D4" opacity="0">I<set attributeName="opacity" to="1" begin="10.335s" fill="freeze"/></text>
+    <text x="186" y="403" textLength="12" lengthAdjust="spacingAndGlyphs" fill="#D4D4D4" opacity="0">-<set attributeName="opacity" to="1" begin="10.335s" fill="freeze"/></text>
+    <text x="198" y="403" textLength="12" lengthAdjust="spacingAndGlyphs" fill="#D4D4D4" opacity="0">T<set attributeName="opacity" to="1" begin="10.335s" fill="freeze"/></text>
+    <text x="210" y="403" textLength="12" lengthAdjust="spacingAndGlyphs" fill="#D4D4D4" opacity="0">o<set attributeName="opacity" to="1" begin="10.335s" fill="freeze"/></text>
+    <text x="222" y="403" textLength="12" lengthAdjust="spacingAndGlyphs" fill="#D4D4D4" opacity="0">o<set attributeName="opacity" to="1" begin="10.335s" fill="freeze"/></text>
+    <text x="234" y="403" textLength="12" lengthAdjust="spacingAndGlyphs" fill="#D4D4D4" opacity="0">l<set attributeName="opacity" to="1" begin="10.335s" fill="freeze"/></text>
+    <text x="246" y="403" textLength="12" lengthAdjust="spacingAndGlyphs" fill="#D4D4D4" opacity="0">C<set attributeName="opacity" to="1" begin="10.335s" fill="freeze"/></text>
+    <text x="258" y="403" textLength="12" lengthAdjust="spacingAndGlyphs" fill="#D4D4D4" opacity="0">a<set attributeName="opacity" to="1" begin="10.335s" fill="freeze"/></text>
+    <text x="270" y="403" textLength="12" lengthAdjust="spacingAndGlyphs" fill="#D4D4D4" opacity="0">l<set attributeName="opacity" to="1" begin="10.335s" fill="freeze"/></text>
+    <text x="282" y="403" textLength="12" lengthAdjust="spacingAndGlyphs" fill="#D4D4D4" opacity="0">l<set attributeName="opacity" to="1" begin="10.335s" fill="freeze"/></text>
+    <text x="294" y="403" textLength="12" lengthAdjust="spacingAndGlyphs" fill="#D4D4D4" opacity="0">i<set attributeName="opacity" to="1" begin="10.335s" fill="freeze"/></text>
+    <text x="306" y="403" textLength="12" lengthAdjust="spacingAndGlyphs" fill="#D4D4D4" opacity="0">n<set attributeName="opacity" to="1" begin="10.335s" fill="freeze"/></text>
+    <text x="318" y="403" textLength="12" lengthAdjust="spacingAndGlyphs" fill="#D4D4D4" opacity="0">g<set attributeName="opacity" to="1" begin="10.335s" fill="freeze"/></text>
+    <text x="30" y="431" textLength="12" lengthAdjust="spacingAndGlyphs" fill="#4CAF50" opacity="0">a<set attributeName="opacity" to="1" begin="11.035s" fill="freeze"/></text>
+    <text x="42" y="431" textLength="12" lengthAdjust="spacingAndGlyphs" fill="#4CAF50" opacity="0">l<set attributeName="opacity" to="1" begin="11.155s" fill="freeze"/></text>
+    <text x="54" y="431" textLength="12" lengthAdjust="spacingAndGlyphs" fill="#4CAF50" opacity="0">i<set attributeName="opacity" to="1" begin="11.23s" fill="freeze"/></text>
+    <text x="66" y="431" textLength="12" lengthAdjust="spacingAndGlyphs" fill="#4CAF50" opacity="0">r<set attributeName="opacity" to="1" begin="11.335s" fill="freeze"/></text>
+    <text x="78" y="431" textLength="12" lengthAdjust="spacingAndGlyphs" fill="#4CAF50" opacity="0">e<set attributeName="opacity" to="1" begin="11.43s" fill="freeze"/></text>
+    <text x="90" y="431" textLength="12" lengthAdjust="spacingAndGlyphs" fill="#4CAF50" opacity="0">z<set attributeName="opacity" to="1" begin="11.49s" fill="freeze"/></text>
+    <text x="102" y="431" textLength="12" lengthAdjust="spacingAndGlyphs" fill="#4CAF50" opacity="0">a<set attributeName="opacity" to="1" begin="11.58s" fill="freeze"/></text>
+    <text x="114" y="431" textLength="12" lengthAdjust="spacingAndGlyphs" fill="#4CAF50" opacity="0">@<set attributeName="opacity" to="1" begin="11.69s" fill="freeze"/></text>
+    <text x="126" y="431" textLength="12" lengthAdjust="spacingAndGlyphs" fill="#4CAF50" opacity="0">g<set attributeName="opacity" to="1" begin="11.76s" fill="freeze"/></text>
+    <text x="138" y="431" textLength="12" lengthAdjust="spacingAndGlyphs" fill="#4CAF50" opacity="0">i<set attributeName="opacity" to="1" begin="11.86s" fill="freeze"/></text>
+    <text x="150" y="431" textLength="12" lengthAdjust="spacingAndGlyphs" fill="#4CAF50" opacity="0">t<set attributeName="opacity" to="1" begin="11.99s" fill="freeze"/></text>
+    <text x="162" y="431" textLength="12" lengthAdjust="spacingAndGlyphs" fill="#4CAF50" opacity="0">h<set attributeName="opacity" to="1" begin="12.055s" fill="freeze"/></text>
+    <text x="174" y="431" textLength="12" lengthAdjust="spacingAndGlyphs" fill="#4CAF50" opacity="0">u<set attributeName="opacity" to="1" begin="12.155s" fill="freeze"/></text>
+    <text x="186" y="431" textLength="12" lengthAdjust="spacingAndGlyphs" fill="#4CAF50" opacity="0">b<set attributeName="opacity" to="1" begin="12.24s" fill="freeze"/></text>
+    <text x="198" y="431" textLength="12" lengthAdjust="spacingAndGlyphs" fill="#4CAF50" opacity="0">:<set attributeName="opacity" to="1" begin="12.36s" fill="freeze"/></text>
+    <text x="210" y="431" textLength="12" lengthAdjust="spacingAndGlyphs" fill="#4CAF50" opacity="0">~<set attributeName="opacity" to="1" begin="12.435s" fill="freeze"/></text>
+    <text x="222" y="431" textLength="12" lengthAdjust="spacingAndGlyphs" fill="#4CAF50" opacity="0">$<set attributeName="opacity" to="1" begin="12.54s" fill="freeze"/></text>
+  </g>
 
-  <!-- ================================================================= -->
-  <!-- COMMAND 1 : whoami                                                -->
-  <!-- Frames: prompt -> w -> wh -> who -> whoa -> whoam -> whoami        -->
-  <!-- ================================================================= -->
-  <text x="30" y="95" font-family="'Fira Code', monospace" font-size="20" xml:space="preserve"><tspan fill="#4CAF50" opacity="0">alireza@github:~$ <set attributeName="opacity" to="1" begin="0s" fill="freeze"/></tspan><tspan fill="#FFFFFF" opacity="0">w<set attributeName="opacity" to="1" begin="0.39s" fill="freeze"/></tspan><tspan fill="#FFFFFF" opacity="0">h<set attributeName="opacity" to="1" begin="0.5s" fill="freeze"/></tspan><tspan fill="#FFFFFF" opacity="0">o<set attributeName="opacity" to="1" begin="0.57s" fill="freeze"/></tspan><tspan fill="#FFFFFF" opacity="0">a<set attributeName="opacity" to="1" begin="0.67s" fill="freeze"/></tspan><tspan fill="#FFFFFF" opacity="0">m<set attributeName="opacity" to="1" begin="0.8s" fill="freeze"/></tspan><tspan fill="#FFFFFF" opacity="0">i<set attributeName="opacity" to="1" begin="0.865s" fill="freeze"/></tspan></text>
-
-  <!-- Output of whoami -->
-  <text x="30" y="123" font-family="'Fira Code', monospace" font-size="20" xml:space="preserve"
-        fill="#D4D4D4" opacity="0">Alireza Pirooz<set attributeName="opacity" to="1" begin="1.365s" fill="freeze"/></text>
-
-  <!-- ================================================================= -->
-  <!-- COMMAND 2 : pwd                                                   -->
-  <!-- Frames: prompt -> p -> pw -> pwd                                  -->
-  <!-- ================================================================= -->
-  <text x="30" y="151" font-family="'Fira Code', monospace" font-size="20" xml:space="preserve"><tspan fill="#4CAF50" opacity="0">alireza@github:~$ <set attributeName="opacity" to="1" begin="2.065s" fill="freeze"/></tspan><tspan fill="#FFFFFF" opacity="0">p<set attributeName="opacity" to="1" begin="2.465s" fill="freeze"/></tspan><tspan fill="#FFFFFF" opacity="0">w<set attributeName="opacity" to="1" begin="2.55s" fill="freeze"/></tspan><tspan fill="#FFFFFF" opacity="0">d<set attributeName="opacity" to="1" begin="2.67s" fill="freeze"/></tspan></text>
-
-  <!-- Output of pwd -->
-  <text x="30" y="179" font-family="'Fira Code', monospace" font-size="20" xml:space="preserve"
-        fill="#D4D4D4" opacity="0">AI Engineer<set attributeName="opacity" to="1" begin="3.17s" fill="freeze"/></text>
-
-  <!-- ================================================================= -->
-  <!-- COMMAND 3 : tree projects                                         -->
-  <!-- Frames: prompt -> t -> tr -> tre -> ... -> tree projects          -->
-  <!-- ================================================================= -->
-  <text x="30" y="207" font-family="'Fira Code', monospace" font-size="20" xml:space="preserve"><tspan fill="#4CAF50" opacity="0">alireza@github:~$ <set attributeName="opacity" to="1" begin="3.87s" fill="freeze"/></tspan><tspan fill="#FFFFFF" opacity="0">t<set attributeName="opacity" to="1" begin="4.245s" fill="freeze"/></tspan><tspan fill="#FFFFFF" opacity="0">r<set attributeName="opacity" to="1" begin="4.35s" fill="freeze"/></tspan><tspan fill="#FFFFFF" opacity="0">e<set attributeName="opacity" to="1" begin="4.445s" fill="freeze"/></tspan><tspan fill="#FFFFFF" opacity="0">e<set attributeName="opacity" to="1" begin="4.505s" fill="freeze"/></tspan><tspan fill="#FFFFFF" opacity="0"> <set attributeName="opacity" to="1" begin="4.595s" fill="freeze"/></tspan><tspan fill="#FFFFFF" opacity="0">p<set attributeName="opacity" to="1" begin="4.705s" fill="freeze"/></tspan><tspan fill="#FFFFFF" opacity="0">r<set attributeName="opacity" to="1" begin="4.775s" fill="freeze"/></tspan><tspan fill="#FFFFFF" opacity="0">o<set attributeName="opacity" to="1" begin="4.875s" fill="freeze"/></tspan><tspan fill="#FFFFFF" opacity="0">j<set attributeName="opacity" to="1" begin="5.005s" fill="freeze"/></tspan><tspan fill="#FFFFFF" opacity="0">e<set attributeName="opacity" to="1" begin="5.07s" fill="freeze"/></tspan><tspan fill="#FFFFFF" opacity="0">c<set attributeName="opacity" to="1" begin="5.17s" fill="freeze"/></tspan><tspan fill="#FFFFFF" opacity="0">t<set attributeName="opacity" to="1" begin="5.255s" fill="freeze"/></tspan><tspan fill="#FFFFFF" opacity="0">s<set attributeName="opacity" to="1" begin="5.375s" fill="freeze"/></tspan></text>
-
-  <!-- Output of tree projects (cascades in line by line) -->
-  <text x="30" y="235" font-family="'Fira Code', monospace" font-size="20" xml:space="preserve"
-        fill="#D4D4D4" opacity="0">projects<set attributeName="opacity" to="1" begin="5.875s" fill="freeze"/></text>
-  <text x="30" y="263" font-family="'Fira Code', monospace" font-size="20" xml:space="preserve"
-        fill="#D4D4D4" opacity="0">├── book-genre-classifier<set attributeName="opacity" to="1" begin="5.935s" fill="freeze"/></text>
-  <text x="30" y="291" font-family="'Fira Code', monospace" font-size="20" xml:space="preserve"
-        fill="#D4D4D4" opacity="0">├── SQL-Agent<set attributeName="opacity" to="1" begin="5.995s" fill="freeze"/></text>
-  <text x="30" y="319" font-family="'Fira Code', monospace" font-size="20" xml:space="preserve"
-        fill="#D4D4D4" opacity="0">├── digikala_search<set attributeName="opacity" to="1" begin="6.055s" fill="freeze"/></text>
-  <text x="30" y="347" font-family="'Fira Code', monospace" font-size="20" xml:space="preserve"
-        fill="#D4D4D4" opacity="0">├── house-price-regression<set attributeName="opacity" to="1" begin="6.115s" fill="freeze"/></text>
-  <text x="30" y="375" font-family="'Fira Code', monospace" font-size="20" xml:space="preserve"
-        fill="#D4D4D4" opacity="0">├── python-messager<set attributeName="opacity" to="1" begin="6.175s" fill="freeze"/></text>
-  <text x="30" y="403" font-family="'Fira Code', monospace" font-size="20" xml:space="preserve"
-        fill="#D4D4D4" opacity="0">└── AgenticAI-ToolCalling<set attributeName="opacity" to="1" begin="6.235s" fill="freeze"/></text>
-
-  <!-- ================================================================= -->
-  <!-- FINAL PROMPT (session settles here, cursor blinks forever)        -->
-  <!-- ================================================================= -->
-  <text x="30" y="431" font-family="'Fira Code', monospace" font-size="20" xml:space="preserve"><tspan fill="#4CAF50" opacity="0">alireza@github:~$ <set attributeName="opacity" to="1" begin="6.935s" fill="freeze"/></tspan></text>
-
-  <!-- ================================================================= -->
-  <!-- BLINKING CURSOR                                                   -->
-  <!-- A single block that jumps (never fades/slides) to the exact spot -->
-  <!-- the next character or line appears, tracking the whole session.  -->
-  <!-- ================================================================= -->
-  <g transform="translate(246,95)">
-
-    <!-- Command 1: whoami -->
-    <set attributeName="transform" to="translate(258,95)"  begin="0.39s"  fill="freeze"/>
-    <set attributeName="transform" to="translate(270,95)"  begin="0.5s"   fill="freeze"/>
-    <set attributeName="transform" to="translate(282,95)"  begin="0.57s"  fill="freeze"/>
-    <set attributeName="transform" to="translate(294,95)"  begin="0.67s"  fill="freeze"/>
-    <set attributeName="transform" to="translate(306,95)"  begin="0.8s"   fill="freeze"/>
-    <set attributeName="transform" to="translate(318,95)"  begin="0.865s" fill="freeze"/>
-
-    <!-- output appears -> cursor drops to the next prompt line -->
-    <set attributeName="transform" to="translate(30,151)"  begin="1.365s" fill="freeze"/>
-
-    <!-- Command 2: pwd -->
-    <set attributeName="transform" to="translate(246,151)" begin="2.065s" fill="freeze"/>
-    <set attributeName="transform" to="translate(258,151)" begin="2.465s" fill="freeze"/>
-    <set attributeName="transform" to="translate(270,151)" begin="2.55s"  fill="freeze"/>
-    <set attributeName="transform" to="translate(282,151)" begin="2.67s"  fill="freeze"/>
-
-    <!-- output appears -> cursor drops to the next prompt line -->
-    <set attributeName="transform" to="translate(30,207)"  begin="3.17s"  fill="freeze"/>
-
-    <!-- Command 3: tree projects -->
-    <set attributeName="transform" to="translate(246,207)" begin="3.87s"  fill="freeze"/>
-    <set attributeName="transform" to="translate(258,207)" begin="4.245s" fill="freeze"/>
-    <set attributeName="transform" to="translate(270,207)" begin="4.35s"  fill="freeze"/>
-    <set attributeName="transform" to="translate(282,207)" begin="4.445s" fill="freeze"/>
-    <set attributeName="transform" to="translate(294,207)" begin="4.505s" fill="freeze"/>
-    <set attributeName="transform" to="translate(306,207)" begin="4.595s" fill="freeze"/>
-    <set attributeName="transform" to="translate(318,207)" begin="4.705s" fill="freeze"/>
-    <set attributeName="transform" to="translate(330,207)" begin="4.775s" fill="freeze"/>
-    <set attributeName="transform" to="translate(342,207)" begin="4.875s" fill="freeze"/>
-    <set attributeName="transform" to="translate(354,207)" begin="5.005s" fill="freeze"/>
-    <set attributeName="transform" to="translate(366,207)" begin="5.07s"  fill="freeze"/>
-    <set attributeName="transform" to="translate(378,207)" begin="5.17s"  fill="freeze"/>
-    <set attributeName="transform" to="translate(390,207)" begin="5.255s" fill="freeze"/>
-    <set attributeName="transform" to="translate(402,207)" begin="5.375s" fill="freeze"/>
-
-    <!-- tree output cascades line by line -> cursor leads each new line -->
-    <set attributeName="transform" to="translate(30,263)"  begin="5.875s" fill="freeze"/>
-    <set attributeName="transform" to="translate(30,291)"  begin="5.935s" fill="freeze"/>
-    <set attributeName="transform" to="translate(30,319)"  begin="5.995s" fill="freeze"/>
-    <set attributeName="transform" to="translate(30,347)"  begin="6.055s" fill="freeze"/>
-    <set attributeName="transform" to="translate(30,375)"  begin="6.115s" fill="freeze"/>
-    <set attributeName="transform" to="translate(30,403)"  begin="6.175s" fill="freeze"/>
-    <set attributeName="transform" to="translate(30,431)"  begin="6.235s" fill="freeze"/>
-
-    <!-- final prompt appears -> cursor settles here and blinks forever -->
-    <set attributeName="transform" to="translate(246,431)" begin="6.935s" fill="freeze"/>
-
-    <!-- The cursor block itself: hard on/off blink, no fading, never stops -->
+  <!-- ================= BLINKING CURSOR ================= -->
+  <!-- Tracks the grid exactly (same column formula as the glyphs above), so
+       it is always pinned immediately after the last visible character. -->
+  <g transform="translate(30,95)">
+    <set attributeName="transform" to="translate(42,95)" begin="0.3s" fill="freeze"/>
+    <set attributeName="transform" to="translate(54,95)" begin="0.39s" fill="freeze"/>
+    <set attributeName="transform" to="translate(66,95)" begin="0.5s" fill="freeze"/>
+    <set attributeName="transform" to="translate(78,95)" begin="0.57s" fill="freeze"/>
+    <set attributeName="transform" to="translate(90,95)" begin="0.67s" fill="freeze"/>
+    <set attributeName="transform" to="translate(102,95)" begin="0.8s" fill="freeze"/>
+    <set attributeName="transform" to="translate(114,95)" begin="0.865s" fill="freeze"/>
+    <set attributeName="transform" to="translate(126,95)" begin="0.965s" fill="freeze"/>
+    <set attributeName="transform" to="translate(138,95)" begin="1.05s" fill="freeze"/>
+    <set attributeName="transform" to="translate(150,95)" begin="1.17s" fill="freeze"/>
+    <set attributeName="transform" to="translate(162,95)" begin="1.245s" fill="freeze"/>
+    <set attributeName="transform" to="translate(174,95)" begin="1.35s" fill="freeze"/>
+    <set attributeName="transform" to="translate(186,95)" begin="1.445s" fill="freeze"/>
+    <set attributeName="transform" to="translate(198,95)" begin="1.505s" fill="freeze"/>
+    <set attributeName="transform" to="translate(210,95)" begin="1.595s" fill="freeze"/>
+    <set attributeName="transform" to="translate(222,95)" begin="1.705s" fill="freeze"/>
+    <set attributeName="transform" to="translate(234,95)" begin="1.775s" fill="freeze"/>
+    <set attributeName="transform" to="translate(246,95)" begin="1.875s" fill="freeze"/>
+    <set attributeName="transform" to="translate(258,95)" begin="2.005s" fill="freeze"/>
+    <set attributeName="transform" to="translate(270,95)" begin="2.07s" fill="freeze"/>
+    <set attributeName="transform" to="translate(282,95)" begin="2.17s" fill="freeze"/>
+    <set attributeName="transform" to="translate(294,95)" begin="2.255s" fill="freeze"/>
+    <set attributeName="transform" to="translate(306,95)" begin="2.375s" fill="freeze"/>
+    <set attributeName="transform" to="translate(318,95)" begin="2.45s" fill="freeze"/>
+    <set attributeName="transform" to="translate(30,151)" begin="2.95s" fill="freeze"/>
+    <set attributeName="transform" to="translate(42,151)" begin="3.65s" fill="freeze"/>
+    <set attributeName="transform" to="translate(54,151)" begin="3.755s" fill="freeze"/>
+    <set attributeName="transform" to="translate(66,151)" begin="3.85s" fill="freeze"/>
+    <set attributeName="transform" to="translate(78,151)" begin="3.91s" fill="freeze"/>
+    <set attributeName="transform" to="translate(90,151)" begin="4.0s" fill="freeze"/>
+    <set attributeName="transform" to="translate(102,151)" begin="4.11s" fill="freeze"/>
+    <set attributeName="transform" to="translate(114,151)" begin="4.18s" fill="freeze"/>
+    <set attributeName="transform" to="translate(126,151)" begin="4.28s" fill="freeze"/>
+    <set attributeName="transform" to="translate(138,151)" begin="4.41s" fill="freeze"/>
+    <set attributeName="transform" to="translate(150,151)" begin="4.475s" fill="freeze"/>
+    <set attributeName="transform" to="translate(162,151)" begin="4.575s" fill="freeze"/>
+    <set attributeName="transform" to="translate(174,151)" begin="4.66s" fill="freeze"/>
+    <set attributeName="transform" to="translate(186,151)" begin="4.78s" fill="freeze"/>
+    <set attributeName="transform" to="translate(198,151)" begin="4.855s" fill="freeze"/>
+    <set attributeName="transform" to="translate(210,151)" begin="4.96s" fill="freeze"/>
+    <set attributeName="transform" to="translate(222,151)" begin="5.055s" fill="freeze"/>
+    <set attributeName="transform" to="translate(234,151)" begin="5.115s" fill="freeze"/>
+    <set attributeName="transform" to="translate(246,151)" begin="5.205s" fill="freeze"/>
+    <set attributeName="transform" to="translate(258,151)" begin="5.315s" fill="freeze"/>
+    <set attributeName="transform" to="translate(270,151)" begin="5.385s" fill="freeze"/>
+    <set attributeName="transform" to="translate(282,151)" begin="5.485s" fill="freeze"/>
+    <set attributeName="transform" to="translate(30,207)" begin="5.985s" fill="freeze"/>
+    <set attributeName="transform" to="translate(42,207)" begin="6.685s" fill="freeze"/>
+    <set attributeName="transform" to="translate(54,207)" begin="6.815s" fill="freeze"/>
+    <set attributeName="transform" to="translate(66,207)" begin="6.88s" fill="freeze"/>
+    <set attributeName="transform" to="translate(78,207)" begin="6.98s" fill="freeze"/>
+    <set attributeName="transform" to="translate(90,207)" begin="7.065s" fill="freeze"/>
+    <set attributeName="transform" to="translate(102,207)" begin="7.185s" fill="freeze"/>
+    <set attributeName="transform" to="translate(114,207)" begin="7.26s" fill="freeze"/>
+    <set attributeName="transform" to="translate(126,207)" begin="7.365s" fill="freeze"/>
+    <set attributeName="transform" to="translate(138,207)" begin="7.46s" fill="freeze"/>
+    <set attributeName="transform" to="translate(150,207)" begin="7.52s" fill="freeze"/>
+    <set attributeName="transform" to="translate(162,207)" begin="7.61s" fill="freeze"/>
+    <set attributeName="transform" to="translate(174,207)" begin="7.72s" fill="freeze"/>
+    <set attributeName="transform" to="translate(186,207)" begin="7.79s" fill="freeze"/>
+    <set attributeName="transform" to="translate(198,207)" begin="7.89s" fill="freeze"/>
+    <set attributeName="transform" to="translate(210,207)" begin="8.02s" fill="freeze"/>
+    <set attributeName="transform" to="translate(222,207)" begin="8.085s" fill="freeze"/>
+    <set attributeName="transform" to="translate(234,207)" begin="8.185s" fill="freeze"/>
+    <set attributeName="transform" to="translate(246,207)" begin="8.27s" fill="freeze"/>
+    <set attributeName="transform" to="translate(258,207)" begin="8.39s" fill="freeze"/>
+    <set attributeName="transform" to="translate(270,207)" begin="8.465s" fill="freeze"/>
+    <set attributeName="transform" to="translate(282,207)" begin="8.57s" fill="freeze"/>
+    <set attributeName="transform" to="translate(294,207)" begin="8.665s" fill="freeze"/>
+    <set attributeName="transform" to="translate(306,207)" begin="8.725s" fill="freeze"/>
+    <set attributeName="transform" to="translate(318,207)" begin="8.815s" fill="freeze"/>
+    <set attributeName="transform" to="translate(330,207)" begin="8.925s" fill="freeze"/>
+    <set attributeName="transform" to="translate(342,207)" begin="8.995s" fill="freeze"/>
+    <set attributeName="transform" to="translate(354,207)" begin="9.095s" fill="freeze"/>
+    <set attributeName="transform" to="translate(366,207)" begin="9.225s" fill="freeze"/>
+    <set attributeName="transform" to="translate(378,207)" begin="9.29s" fill="freeze"/>
+    <set attributeName="transform" to="translate(390,207)" begin="9.39s" fill="freeze"/>
+    <set attributeName="transform" to="translate(402,207)" begin="9.475s" fill="freeze"/>
+    <set attributeName="transform" to="translate(30,263)" begin="9.975s" fill="freeze"/>
+    <set attributeName="transform" to="translate(30,291)" begin="10.035s" fill="freeze"/>
+    <set attributeName="transform" to="translate(30,319)" begin="10.095s" fill="freeze"/>
+    <set attributeName="transform" to="translate(30,347)" begin="10.155s" fill="freeze"/>
+    <set attributeName="transform" to="translate(30,375)" begin="10.215s" fill="freeze"/>
+    <set attributeName="transform" to="translate(30,403)" begin="10.275s" fill="freeze"/>
+    <set attributeName="transform" to="translate(30,431)" begin="10.335s" fill="freeze"/>
+    <set attributeName="transform" to="translate(42,431)" begin="11.035s" fill="freeze"/>
+    <set attributeName="transform" to="translate(54,431)" begin="11.155s" fill="freeze"/>
+    <set attributeName="transform" to="translate(66,431)" begin="11.23s" fill="freeze"/>
+    <set attributeName="transform" to="translate(78,431)" begin="11.335s" fill="freeze"/>
+    <set attributeName="transform" to="translate(90,431)" begin="11.43s" fill="freeze"/>
+    <set attributeName="transform" to="translate(102,431)" begin="11.49s" fill="freeze"/>
+    <set attributeName="transform" to="translate(114,431)" begin="11.58s" fill="freeze"/>
+    <set attributeName="transform" to="translate(126,431)" begin="11.69s" fill="freeze"/>
+    <set attributeName="transform" to="translate(138,431)" begin="11.76s" fill="freeze"/>
+    <set attributeName="transform" to="translate(150,431)" begin="11.86s" fill="freeze"/>
+    <set attributeName="transform" to="translate(162,431)" begin="11.99s" fill="freeze"/>
+    <set attributeName="transform" to="translate(174,431)" begin="12.055s" fill="freeze"/>
+    <set attributeName="transform" to="translate(186,431)" begin="12.155s" fill="freeze"/>
+    <set attributeName="transform" to="translate(198,431)" begin="12.24s" fill="freeze"/>
+    <set attributeName="transform" to="translate(210,431)" begin="12.36s" fill="freeze"/>
+    <set attributeName="transform" to="translate(222,431)" begin="12.435s" fill="freeze"/>
+    <set attributeName="transform" to="translate(234,431)" begin="12.54s" fill="freeze"/>
+    <set attributeName="transform" to="translate(246,431)" begin="12.635s" fill="freeze"/>
     <rect x="0" y="-18" width="11" height="24" fill="#4CAF50">
-      <animate attributeName="opacity" values="1;0" calcMode="discrete"
-               dur="1.06s" begin="0s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="1;0" calcMode="discrete" dur="1.06s" begin="0s" repeatCount="indefinite"/>
     </rect>
-
   </g>
 
 </svg>
