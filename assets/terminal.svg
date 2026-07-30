@@ -73,12 +73,99 @@ alireza@github:~
 
 <!-- Terminal -->
 
+<!-- whoami typing -->
+
 <text x="45" y="90">
-alireza@github:~$ whoami
+
+<tspan opacity="0">
+a
+<animate attributeName="opacity"
+begin="0s"
+dur="0.01s"
+fill="freeze"
+from="0"
+to="1"/>
+</tspan>
+
+<tspan opacity="0">
+l
+<animate attributeName="opacity"
+begin="0.05s"
+dur="0.01s"
+fill="freeze"
+from="0"
+to="1"/>
+</tspan>
+
+<tspan opacity="0">
+i
+<animate attributeName="opacity"
+begin="0.10s"
+dur="0.01s"
+fill="freeze"
+from="0"
+to="1"/>
+</tspan>
+
+<tspan opacity="0">
+r
+<animate attributeName="opacity"
+begin="0.15s"
+dur="0.01s"
+fill="freeze"
+from="0"
+to="1"/>
+</tspan>
+
+<tspan opacity="0">
+e
+<animate attributeName="opacity"
+begin="0.20s"
+dur="0.01s"
+fill="freeze"
+from="0"
+to="1"/>
+</tspan>
+
+<tspan opacity="0">
+z
+<animate attributeName="opacity"
+begin="0.25s"
+dur="0.01s"
+fill="freeze"
+from="0"
+to="1"/>
+</tspan>
+
+<tspan opacity="0">
+a@github:~$ whoami
+<animate attributeName="opacity"
+begin="0.30s"
+dur="0.01s"
+fill="freeze"
+from="0"
+to="1"/>
+</tspan>
+
 </text>
 
-<text x="45" y="120">
+<!-- output -->
+
+<text
+x="45"
+y="120"
+opacity="0">
+
 Alireza Pirooz
+
+<animate
+attributeName="opacity"
+begin="1.4s"
+dur="0.2s"
+fill="freeze"
+from="0"
+to="1"/>
+
 </text>
 
 <text x="45" y="165">
