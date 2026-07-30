@@ -1,1 +1,52 @@
+<svg width="900" height="420"
+xmlns="http://www.w3.org/2000/svg">
 
+<style>
+text{
+    font-family: "Fira Code", monospace;
+    fill:#d4d4d4;
+    font-size:20px;
+}
+
+.bg{
+    fill:#1e1e1e;
+}
+
+.title{
+    fill:#2d2d2d;
+}
+
+.red{fill:#ff5f56;}
+.yellow{fill:#ffbd2e;}
+.green{fill:#27c93f;}
+</style>
+
+<!-- Terminal -->
+
+<rect
+x="20"
+y="20"
+rx="12"
+ry="12"
+width="860"
+height="380"
+class="bg"/>
+
+<!-- Top Bar -->
+
+<rect
+x="20"
+y="20"
+rx="12"
+ry="12"
+width="860"
+height="40"
+class="title"/>
+
+<!-- Window Buttons -->
+
+<circle cx="45" cy="40" r="7" class="red"/>
+<circle cx="70" cy="40" r="7" class="yellow"/>
+<circle cx="95" cy="40" r="7" class="green"/>
+
+</svg>
