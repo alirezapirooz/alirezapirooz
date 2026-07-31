@@ -2,4 +2,4 @@
   <img src="assets/terminal.svg" width="900" alt="Terminal Animation"/>
 </p>
 
-![AI Dino](asset/ai-dino.svg)
+<img src="assets/ai-dino.svg" width="800"/>
