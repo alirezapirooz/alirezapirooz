@@ -1,3 +1,149 @@
 <p align="center">
   <img src="assets/terminal.svg" width="900" alt="Terminal Animation"/>
 </p>
+
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" width="100%" height="100%">
+  <!-- ================= BACKGROUND & TERMINAL THEME ================= -->
+  <defs>
+    <!-- Terminal Grid Pattern -->
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <rect width="40" height="40" fill="none" stroke="#161b22" stroke-width="1" />
+      <rect width="2" height="2" fill="#30363d" />
+    </pattern>
+    
+    <!-- Glowing Effect for Dino -->
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Base Terminal Window -->
+  <rect width="100%" height="100%" fill="#0d1117" rx="10" />
+  <rect width="100%" height="100%" fill="url(#grid)" rx="10" />
+  <rect x="0" y="0" width="800" height="400" rx="10" stroke="#30363d" stroke-width="2" fill="none" />
+
+  <!-- Terminal Header -->
+  <text x="20" y="30" font-family="monospace" font-size="16" fill="#6272a4">AI-Dino v1.0.0</text>
+  <text x="780" y="30" font-family="monospace" font-size="16" fill="#6272a4" text-anchor="end">[alirezapirooz@github ~]$ ./run.sh</text>
+  <line x1="0" y1="45" x2="800" y2="45" stroke="#30363d" stroke-width="2" />
+
+  <!-- ================= STATIC NOISE / MATRIX RAIN DOTS ================= -->
+  <circle cx="200" cy="100" r="2" fill="#00ff41" opacity="0.4">
+    <animate attributeName="opacity" values="0;1;0" dur="2s" repeatCount="indefinite" />
+  </circle>
+  <circle cx="650" cy="180" r="3" fill="#00ff41" opacity="0.2">
+    <animate attributeName="opacity" values="0;1;0" dur="3s" repeatCount="indefinite" begin="0.5s" />
+  </circle>
+  <circle cx="720" cy="80" r="1.5" fill="#58a6ff" opacity="0.5">
+    <animate attributeName="opacity" values="0;1;0" dur="1.5s" repeatCount="indefinite" begin="1s" />
+  </circle>
+
+  <!-- ================= SCORES ================= -->
+  <!-- Score 1: Initial -->
+  <text x="20" y="70" font-family="monospace" font-size="24" fill="#58a6ff" font-weight="bold" opacity="1">
+    Score: 000000
+    <animate attributeName="opacity" values="1;1;0;0" keyTimes="0;0.25;0.26;1" dur="6s" repeatCount="indefinite" />
+  </text>
+  
+  <!-- Score 2: After Bug -->
+  <text x="20" y="70" font-family="monospace" font-size="24" fill="#58a6ff" font-weight="bold" opacity="0">
+    Score: 000128
+    <animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;0.25;0.26;0.48;0.49;1" dur="6s" repeatCount="indefinite" />
+  </text>
+
+  <!-- Score 3: After Exception -->
+  <text x="20" y="70" font-family="monospace" font-size="24" fill="#58a6ff" font-weight="bold" opacity="0">
+    Score: 000312
+    <animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;0.48;0.49;0.72;0.73;1" dur="6s" repeatCount="indefinite" />
+  </text>
+
+  <!-- Score 4: After Crash -->
+  <text x="20" y="70" font-family="monospace" font-size="24" fill="#58a6ff" font-weight="bold" opacity="0">
+    Score: 000548
+    <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.72;0.73;1" dur="6s" repeatCount="indefinite" />
+  </text>
+
+  <!-- ================= HIGH SCORE OVERLAY ================= -->
+  <g opacity="0">
+    <animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;0.85;0.88;0.95;0.98;1" dur="6s" repeatCount="indefinite" />
+    <rect x="250" y="140" width="300" height="100" rx="10" fill="#1f6feb" opacity="0.95" />
+    <rect x="250" y="140" width="300" height="100" rx="10" fill="none" stroke="#58a6ff" stroke-width="2" />
+    <text x="400" y="175" font-family="monospace" font-size="24" fill="white" text-anchor="middle" font-weight="bold">High Score:</text>
+    <text x="400" y="210" font-family="monospace" font-size="20" fill="#f0f6fc" text-anchor="middle">Keep Learning</text>
+  </g>
+
+  <!-- ================= GROUND (SCROLLING TERMINAL) ================= -->
+  <text x="0" y="320" font-family="monospace" font-size="20" fill="#6272a4" xml:space="preserve">
+    <tspan fill="#f0f6fc">[root@ai-dino ~]$</tspan> <tspan fill="#58a6ff">./run_ai_dino.sh</tspan> <tspan fill="#6272a4">_ __ _ __ _ __ _ __ _ __ _ __ _ __ _ __ _ __ _ __ _ __ _ __ _ __ _ __ _ __ _ __ _ __ _ __ _ __ _ __ _ __ _ __ _ __ _ __ _ __ _</tspan>
+    <tspan fill="#6272a4">_ __ _ __ _ __ _ __ _ __ _ __ _ __ _ __ _ __ _ __ _ __ _ __ _ __ _ __ _ __ _ __ _ __ _ __ _ __ _ __ _ __ _ __ _ __ _ __ _ __ _</tspan>
+    <animateTransform attributeName="transform" type="translate" from="0 0" to="-400 0" dur="2s" repeatCount="indefinite" />
+  </text>
+
+  <!-- ================= OBSTACLES ================= -->
+  
+  <!-- Obstacle 1: BUG -->
+  <g>
+    <animateTransform attributeName="transform" type="translate" from="800, 280" to="-200, 280" begin="0.5s; 6.5s" dur="1.5s" repeatCount="1" fill="freeze" />
+    <rect x="0" y="0" width="110" height="40" rx="5" fill="#ff5555" />
+    <text x="10" y="25" font-family="monospace" font-size="20" fill="#ffffff" font-weight="bold">[ BUG ]</text>
+  </g>
+
+  <!-- Obstacle 2: EXCEPTION -->
+  <g>
+    <animateTransform attributeName="transform" type="translate" from="800, 280" to="-200, 280" begin="2s; 8s" dur="1.5s" repeatCount="1" fill="freeze" />
+    <rect x="0" y="0" width="160" height="40" rx="5" fill="#f1fa8c" />
+    <text x="10" y="25" font-family="monospace" font-size="20" fill="#000000" font-weight="bold">⚠ EXCEPTION</text>
+  </g>
+
+  <!-- Obstacle 3: CRASH -->
+  <g>
+    <animateTransform attributeName="transform" type="translate" from="800, 280" to="-200, 280" begin="3.5s; 9.5s" dur="1.5s" repeatCount="1" fill="freeze" />
+    <rect x="0" y="0" width="130" height="40" rx="5" fill="#8b0000" />
+    <text x="10" y="25" font-family="monospace" font-size="20" fill="#ffffff" font-weight="bold">💥 CRASH</text>
+  </g>
+
+  <!-- ================= DINO (ASCII ART T-REX) ================= -->
+  <!-- Base Position: X=100, Y=176 (Bottom touches Ground at Y=320) -->
+  <g id="dino" font-family="monospace" font-size="24" fill="#00ff41" filter="url(#glow)">
+    <!-- 
+      Jump Animation: 
+      - 0s - 1s: Run (Y=176)
+      - 1s - 1.2s: Jump Up (Y=60)
+      - 1.2s - 1.8s: Stay Up (Y=60)
+      - 1.8s - 2s: Fall Down (Y=176)
+      - 2s - 2.5s: Run
+      - 2.5s - 2.7s: Jump Up
+      - 2.7s - 3.3s: Stay Up
+      - 3.3s - 3.5s: Fall Down
+      - 3.5s - 4s: Run
+      - 4s - 4.2s: Jump Up
+      - 4.2s - 4.8s: Stay Up
+      - 4.8s - 5s: Fall Down
+      - 5s - 6s: Run
+    -->
+    <animateTransform attributeName="transform" type="translate" 
+      values="100,176; 100,176; 100,60; 100,60; 100,176; 100,176; 100,60; 100,60; 100,176; 100,176; 100,60; 100,60; 100,176; 100,176" 
+      keyTimes="0; 0.16; 0.2; 0.3; 0.4; 0.42; 0.46; 0.56; 0.66; 0.67; 0.71; 0.81; 0.91; 1" 
+      dur="6s" repeatCount="indefinite" />
+    
+    <!-- Blinking Terminal Cursor next to Dino -->
+    <rect x="160" y="26" width="10" height="24" fill="#00ff41">
+      <animate attributeName="opacity" values="1;0;1" dur="0.5s" repeatCount="indefinite" />
+    </rect>
+
+    <!-- Dino ASCII Body -->
+    <text xml:space="preserve">
+      <tspan x="0" dy="0">      __</tspan>
+      <tspan x="0" dy="24">     / _)</tspan>
+      <tspan x="0" dy="24"> .--^- /</tspan>
+      <tspan x="0" dy="24"> \___  /</tspan>
+      <tspan x="0" dy="24">   {_}_}</tspan>
+      <tspan x="0" dy="24">    || ||</tspan>
+    </text>
+  </g>
+</svg>
